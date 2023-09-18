@@ -1,0 +1,27 @@
+@use '../variables'
+
+.nav-bar 
+   height: 100vh
+   width: 16rem
+   padding: 5rem 0
+
+   background-color: variables.$blue-700 
+
+   display: grid
+   justify-items: center
+   grid-template-areas: 'logo' 'nav' 'social'
+
+
+   #logo 
+      margin: 0 auto
+
+   ul 
+      margin: 0 auto
+
+      li 
+         padding: .4rem 0
+         font-size:  variables.$font-size-100
+         list-style: none
+
+      #active 
+         color: variables.$light-200

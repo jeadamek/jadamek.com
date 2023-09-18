@@ -7,8 +7,8 @@ import Logo from "../assets/logo.svg";
 
 export function NavBar() {
    return(
-      <div className="aside-bar">
-         <img src={Logo} alt="Jessica's Logo" />
+      <div className="nav-bar">
+         <img id="logo" src={Logo} alt="Jessica's Logo" />
          <nav>
             <ul>
                <li>about me</li>   
@@ -19,8 +19,8 @@ export function NavBar() {
 
          </nav>
          <div id="social-medias">
-            <BsGithub size={32} />
-            <BsLinkedin size={32} />
+            <BsGithub size={26} />
+            <BsLinkedin size={26} />
          </div>
       </div>
    )
