@@ -1,4 +1,4 @@
-export default function MainContent() {
+export function MainContent() {
    return (
       <main>
          main
