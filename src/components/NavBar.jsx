@@ -18,9 +18,9 @@ export function NavBar() {
             </ul>
 
          </nav>
-         <div id="social-medias">
-            <BsGithub size={26} />
-            <BsLinkedin size={26} />
+         <div id="social-media">
+            <a href="https://github.com/jeadamek" target="_blank" rel="noreferrer"><BsGithub size={28} /></a>
+            <a href="https://www.linkedin.com/in/jessica-adamek/" target="_blank" rel="noreferrer"><BsLinkedin size={28} /></a>
          </div>
       </div>
    )
