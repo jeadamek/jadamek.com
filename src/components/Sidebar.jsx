@@ -12,14 +12,16 @@ import Logo from "../assets/logo.svg";
 export function Sidebar() {
 
    function handleModal() {
+      console.log("click")
       document.getElementById("nav-wrapper").classList.toggle('active-mobile-nav');
    }
 
    return(
       <div className="sidebar">
          <button className="menu-btn" 
-            onClick={() => handleModal
-         }>
+            onClick={() => {
+               handleModal()
+            }}>
             <RiMenu5Fill size={28} />
          </button>
 
@@ -27,9 +29,9 @@ export function Sidebar() {
 
          <div id="nav-wrapper">
             <div className="buttons">
-               <button 
-                  onClick={() => handleModal
-               }>
+               <button onClick={() => {
+                  handleModal()
+               }}>
                   <AiOutlineClose size={28}/>
                </button>
 
