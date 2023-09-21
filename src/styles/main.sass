@@ -1,4 +1,5 @@
 @use 'variables'
+@use 'mixins'
 
 *
    margin: 0
@@ -19,8 +20,10 @@
 
 #root
    height: 100vh
-   display: flex
-   flex-direction: row
+
+   @include mixins.md
+      display: flex
+      flex-direction: row
 
 a
    text-decoration: none
