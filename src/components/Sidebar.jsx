@@ -46,9 +46,9 @@ export function Sidebar() {
                </ul>
             </nav>
 
-            <div id="social-media">
-               <a href="https://github.com/jeadamek" target="_blank" rel="noreferrer"><BsGithub size={28} /></a>
-               <a href="https://www.linkedin.com/in/jessica-adamek/" target="_blank" rel="noreferrer"><BsLinkedin size={28} /></a>
+            <div className="social-media">
+               <a href="https://github.com/jeadamek" target="_blank" rel="noreferrer"><BsGithub size={24} /></a>
+               <a href="https://www.linkedin.com/in/jessica-adamek/" target="_blank" rel="noreferrer"><BsLinkedin size={24} /></a>
             </div>
          </div>
       </div>
