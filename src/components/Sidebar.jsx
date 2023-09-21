@@ -1,6 +1,7 @@
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { RiMenu5Fill } from "react-icons/ri";
+import { AiOutlineClose } from "react-icons/ai";
 
 import "../styles/components/sidebar.sass";
 
@@ -13,18 +14,23 @@ export function Sidebar() {
 
          <img id="logo" src={Logo} alt="Jessica's Logo" />
 
-         <nav>
-            <ul>
-               <li><a href="#">about me</a></li>   
-               <li id="active"><a href="#">skills</a></li>   
-               <li><a href="#">work</a></li>   
-               <li><a href="#">contact</a></li>   
-            </ul>
-         </nav>
-         
-         <div id="social-media">
-            <a href="https://github.com/jeadamek" target="_blank" rel="noreferrer"><BsGithub size={28} /></a>
-            <a href="https://www.linkedin.com/in/jessica-adamek/" target="_blank" rel="noreferrer"><BsLinkedin size={28} /></a>
+         <div className="nav-wrapper">
+            <div className="buttons">
+               <AiOutlineClose size={28}/>
+            </div>
+            <nav>
+               <ul>
+                  <li><a href="#">about me</a></li>
+                  <li id="active"><a href="#">skills</a></li>
+                  <li><a href="#">work</a></li>
+                  <li><a href="#">contact</a></li>
+               </ul>
+            </nav>
+
+            <div id="social-media">
+               <a href="https://github.com/jeadamek" target="_blank" rel="noreferrer"><BsGithub size={28} /></a>
+               <a href="https://www.linkedin.com/in/jessica-adamek/" target="_blank" rel="noreferrer"><BsLinkedin size={28} /></a>
+            </div>
          </div>
       </div>
    )
