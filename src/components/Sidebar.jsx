@@ -10,23 +10,35 @@ import "../styles/components/sidebar.sass";
 import Logo from "../assets/logo.svg";
 
 export function Sidebar() {
+
+   function handleModal() {
+      document.getElementById("nav-wrapper").classList.toggle('active-mobile-nav');
+   }
+
    return(
       <div className="sidebar">
-         <span className="menu-btn"><RiMenu5Fill size={28} /></span>
+         <button className="menu-btn" 
+            onClick={() => handleModal
+         }>
+            <RiMenu5Fill size={28} />
+         </button>
 
          <img id="logo" src={Logo} alt="Jessica's Logo" />
 
-         <div className="nav-wrapper">
+         <div id="nav-wrapper">
             <div className="buttons">
-               <button>
+               <button 
+                  onClick={() => handleModal
+               }>
                   <AiOutlineClose size={28}/>
                </button>
+
                <Toggle />
             </div>
             <nav>
                <ul>
                   <li><a href="#">about me</a></li>
-                  <li id="active"><a href="#">skills</a></li>
+                  <li className="active-menu"><a href="#">skills</a></li>
                   <li><a href="#">work</a></li>
                   <li><a href="#">contact</a></li>
                </ul>
