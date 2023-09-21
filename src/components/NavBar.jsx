@@ -11,10 +11,10 @@ export function NavBar() {
          <img id="logo" src={Logo} alt="Jessica's Logo" />
          <nav>
             <ul>
-               <li>about me</li>   
-               <li>skills</li>   
-               <li>work</li>   
-               <li>contact</li>   
+               <li><a href="#">about me</a></li>   
+               <li id="active"><a href="#">skills</a></li>   
+               <li><a href="#">work</a></li>   
+               <li><a href="#">contact</a></li>   
             </ul>
 
          </nav>

@@ -2,15 +2,15 @@
 
 .nav-bar 
    height: 100vh
-   width: 16rem
-   padding: 4rem 0
+   width: 21rem
+   padding: 6rem 0
 
    background-color: variables.$blue-700 
 
    display: grid
    justify-items: center
    grid-template-areas: 'logo' 'nav' 'social'
-   grid-template-rows: 110px auto 24px
+   grid-template-rows: 110px auto 30px
    gap: 4rem
 
 
@@ -22,11 +22,43 @@
 
       li 
          padding: .4rem 0
-         font-size:  variables.$font-size-100
+         font-size:  variables.$font-size-300
          list-style: none
+         position: relative
+
+         cursor: pointer
+         transition: 1s
+
+         &::after
+            content: ""
+            position: absolute
+            height: 1px
+            bottom: 0.5rem
+            left: 1rem
+            width: 60%
+
+            transition: 1s
+            background-color: variables.$light-500 
+
+         a
+            color: variables.$light-500
+
+         &:hover
+            a 
+               color: variables.$light-200
+
+            &::after
+               width: 100%
+               background-color: variables.$blue-100
 
       #active 
-         color: variables.$light-200
+         a
+            color: variables.$light-200
+
+         &::after
+            width: 100%
+            background-color: variables.$blue-100
+
    
    #social-media 
       grid-area: social
