@@ -1,8 +1,7 @@
 @use '../variables'
 @use '../mixins'
 
-
-.sidebar 
+.sidebar
    height: 11.6rem
    width: 100vw
    padding: 0 4rem
@@ -11,7 +10,7 @@
    align-items: center
    justify-content: space-between
 
-   background-color: variables.$blue-700 
+   background-color: variables.$blue-700
 
    @include mixins.md
       width: 21rem
@@ -23,17 +22,16 @@
       grid-template-rows: 110px auto
       gap: 6rem
 
-   
-   .menu-btn 
+   .menu-btn
       color: variables.$blue-100
       cursor: pointer
 
       @include  mixins.md
          display: none
 
-   #logo 
+   #logo
       height: 3.2rem
-      
+
       @include  mixins.md
          height: 10.5rem
          margin: 0 auto
@@ -41,31 +39,48 @@
    .nav-wrapper
       height: 100%
       width: 100%
-      
+
       position: fixed
       top: 0
       left: 0
 
-      padding: 5rem 3.2rem 16rem
-      background-color: variables.$blue-700
+      padding: 5rem 3.2rem 12rem
 
+      display: grid
+      grid-template-rows: 40px auto 30px
+      gap: 7rem
+
+      background-color: variables.$blue-700
 
       @include mixins.md
          position: inherit
          height: 100%
          padding: 0
 
-         display: grid
          grid-template-rows: auto 30px
-         
+         gap: 0
+
          background: none
 
+      .buttons
+         display: flex
+         align-items: center
+         justify-content: space-between
+
+         button
+            background: none
+            border: none
+            color: variables.$blue-100
+            cursor: pointer
+
+         @include mixins.md
+            display: none
 
       nav
-         ul 
-            li 
+         ul
+            li
                padding: 1rem 0
-               font-size:  variables.$font-size-300
+               font-size: variables.$font-size-300
                list-style: none
                position: relative
 
@@ -81,7 +96,7 @@
                   width: 100%
 
                   transition: 1s
-                  background-color: variables.$blue-100 
+                  background-color: variables.$blue-100
 
                a
                   color: variables.$light-200
@@ -89,7 +104,7 @@
             @include mixins.md
                margin: 0 auto
                display: grid
-               gap: .8rem  
+               gap: .8rem
 
                li
                   padding: .4rem 0
@@ -104,22 +119,20 @@
                      width: 60%
 
                      transition: 1s
-                     background-color: variables.$light-500 
-                  
+                     background-color: variables.$light-500
+
                   a
                      color: variables.$light-500
 
                   &:hover
-                     a 
+                     a
                         color: variables.$light-200
 
                      &::after
                         width: 100%
                         background-color: variables.$blue-100
 
-
-
-      #active 
+      #active
          a
             color: variables.$light-200
 
@@ -127,8 +140,7 @@
             width: 100%
             background-color: variables.$blue-100
 
-   
-   #social-media 
+   #social-media
       display: flex
       align-items: center
       justify-content: center
@@ -137,10 +149,9 @@
       a
          color: variables.$light-400
 
-         &:hover 
+         &:hover
             filter: brightness(1.7)
-      
+
       @include mixins.md
          a
             color: variables.$blue-100
-
