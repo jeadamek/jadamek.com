@@ -1,0 +1,47 @@
+@use '../variables'
+@use '../mixins'
+
+header   
+   h1
+      font-size: 3.2rem
+      line-height: 4.2rem
+      font-weight: 700 
+   
+   h2
+      color: variables.$blue-100
+      font-size: variables.$font-size-100
+      font-weight: 500 
+
+   p 
+      font-size: variables.$font-size-100
+      font-weight: 400
+      max-width: 43rem
+
+   @include mixins.sm
+      h1
+         font-size: 4.2rem
+         line-height: 6rem
+      
+      h2
+         font-size: variables.$font-size-200
+
+
+   @include mixins.md
+      h1
+         font-size: 6.2rem
+         line-height: 7.2rem
+
+
+   @include mixins.lg
+      h1
+         font-size: 8rem
+         line-height: 10rem
+
+      h2
+         font-size: variables.$font-size-300
+
+      p
+         max-width: 50rem
+   
+
+   

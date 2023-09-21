@@ -1,0 +1,14 @@
+@use '../variables'
+@use '../mixins'
+
+#content-wrapper
+   max-width: 50rem
+   padding: 7.2rem 3.2rem 0
+   margin: 0 auto
+
+   @include mixins.md
+      max-width: 85rem
+
+   @include mixins.xl
+      margin-left: 16rem
+      padding-top: 16rem
