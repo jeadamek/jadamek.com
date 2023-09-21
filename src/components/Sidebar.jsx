@@ -1,13 +1,13 @@
 import { BsGithub } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 
-import "../styles/components/navBar.sass";
+import "../styles/components/sidebar.sass";
 
 import Logo from "../assets/logo.svg";
 
-export function NavBar() {
+export function Sidebar() {
    return(
-      <div className="nav-bar">
+      <div className="sidebar">
          <img id="logo" src={Logo} alt="Jessica's Logo" />
          <nav>
             <ul>
