@@ -1,0 +1,32 @@
+@use 'variables'
+@use 'mixins'
+
+*
+   margin: 0
+   padding: 0
+   box-sizing: border-box
+   font-family: variables.$font-stack
+
+:root
+   font-size: 62.5%
+
+.dark-theme
+   background-color: variables.$background-dark
+   color: variables.$text-dark
+
+.light-theme
+   background-color: variables.$background-light
+   color: variables.$text-light
+
+#root
+   height: 100vh
+
+   @include mixins.md
+      display: flex
+      flex-direction: row
+
+a
+   text-decoration: none
+
+a, svg
+   transition: .3s

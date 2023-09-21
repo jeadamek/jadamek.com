@@ -1,0 +1,168 @@
+@use '../variables'
+@use '../mixins'
+
+.sidebar
+   height: 11.6rem
+   width: 100vw
+   padding: 0 4rem
+
+   display: flex
+   align-items: center
+   justify-content: space-between
+
+   background-color: variables.$blue-700
+
+   @include mixins.md
+      width: 21rem
+      height: 100vh
+      padding: 6rem 0
+
+      display: grid
+      justify-content: center
+      grid-template-rows: 110px auto
+      gap: 6rem
+
+   .menu-btn
+      background: none
+      border: none
+
+      color: variables.$blue-100
+      cursor: pointer
+
+      @include  mixins.md
+         display: none
+
+   #logo
+      height: 3.2rem
+
+      @include  mixins.md
+         height: 10.5rem
+         margin: 0 auto 
+
+
+   #nav-wrapper
+      height: 100%
+      width: 100%
+
+      position: fixed
+      top: 0
+      left: 0
+
+      padding: 3.8rem 4rem 12rem
+
+      display: grid
+      grid-template-rows: 40px auto 30px
+      gap: 7rem
+
+      background-color: variables.$blue-700
+
+      z-index: 9999
+
+      transition: transform .3s ease-in-out
+      transform: translateX(-100%)
+
+
+      @include mixins.md
+         position: inherit
+         height: 100%
+         padding: 0
+
+         grid-template-rows: auto 30px
+         gap: 0
+
+         background: none
+
+         transform: none
+
+      .buttons
+         display: flex
+         align-items: center
+         justify-content: space-between
+
+         button
+            background: none
+            border: none
+            color: variables.$blue-100
+            cursor: pointer
+
+         @include mixins.md
+            display: none
+
+      nav
+         ul
+            li
+               padding: 1rem 0
+               font-size: variables.$font-size-300
+               list-style: none
+               position: relative
+
+               cursor: pointer
+               transition: 1s
+
+               &::after
+                  content: ""
+                  position: absolute
+                  height: 1px
+                  bottom: 0
+                  left: 0
+                  width: 100%
+
+                  transition: 1s
+                  background-color: variables.$blue-100
+
+               a
+                  color: variables.$light-200
+
+            @include mixins.md
+               margin: 0 auto
+               display: grid
+               gap: .8rem
+
+               li
+                  padding: .4rem 0
+
+                  &::after
+                     bottom: 0.5rem
+                     left: 1rem
+                     width: 60%
+
+                     background-color: variables.$light-500
+
+                  a
+                     color: variables.$light-500
+
+                  &:hover
+                     a
+                        color: variables.$light-200
+
+                     &::after
+                        width: 100%
+                        background-color: variables.$blue-100
+
+               .active-menu
+                  a
+                     color: variables.$light-200
+
+                  &::after
+                     width: 100%
+                     background-color: variables.$blue-100
+
+
+   #nav-wrapper.active-mobile-nav
+      transform: translateX(0)
+
+   #social-media
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 2.8rem
+
+      a
+         color: variables.$light-400
+
+         &:hover
+            filter: brightness(1.7)
+
+      @include mixins.md
+         a
+            color: variables.$blue-100

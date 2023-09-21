@@ -1,10 +1,10 @@
-import MainContent from "./components/MainContent";
-import NavBar from "./components/NavBar";
+import { MainContent } from "./components/MainContent";
+import { Sidebar } from "./components/SideBar";
 
 export default function App() {
    return(
       <>
-         <NavBar />
+         <Sidebar />
          <MainContent />
       </>
    )
