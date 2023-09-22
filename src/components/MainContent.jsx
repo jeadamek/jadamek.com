@@ -12,7 +12,7 @@ export function MainContent() {
             
             <main>
                <Section title="about me">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores cum illo totam excepturi dolore. Officiis, explicabo!</p>
+                  <p>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores cum illo totam excepturi dolore. Officiis, explicabo!</p>
                </Section>
             </main>
 
