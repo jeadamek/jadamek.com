@@ -1,4 +1,5 @@
 @use '../variables'
+@use '../mixins'
 
 footer
    width: 100%
@@ -25,4 +26,15 @@ footer
 
       a
          color: variables.$blue-100
+
+   @include mixins.md
+      background: none
+      justify-content: right
+
+      .author-info
+         text-align: right
+
+
+      .social-media
+         display: none
 
