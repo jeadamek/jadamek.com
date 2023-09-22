@@ -4,9 +4,9 @@ import "../styles/components/techTag.sass";
 
 export function TechTag({title}) {
    return(
-      <div>
+      <span className="tech-tag">
          {title}
-      </div>
+      </span>
    )
 }
 
