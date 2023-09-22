@@ -3,6 +3,7 @@ import { Footer } from "./Footer";
 import { Section } from "./Section";
 
 import "../styles/components/mainContent.sass";
+import { Project } from "./Project";
 
 export function MainContent() {
    return (
@@ -42,7 +43,7 @@ export function MainContent() {
                         <h3>Tools</h3>
                         <ul>
                            <li>Git & GitHub</li>
-                           <li>Chrome DevTolls</li>
+                           <li>Chrome DevTools</li>
                            <li>Visual Studio Code</li>
                         </ul>
                      </div>
@@ -58,6 +59,10 @@ export function MainContent() {
                         </ul>
                      </div>
                   </div>
+               </Section>
+
+               <Section title="work">
+                  <Project />
                </Section>
             </main>
 
