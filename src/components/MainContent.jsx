@@ -11,7 +11,9 @@ export function MainContent() {
             <Header />
             
             <main>
-               <Section />
+               <Section title="about me">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores cum illo totam excepturi dolore. Officiis, explicabo!</p>
+               </Section>
             </main>
 
          </div>
