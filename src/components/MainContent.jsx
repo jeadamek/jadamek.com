@@ -1,9 +1,11 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { Project } from "./Project";
 import { Section } from "./Section";
 
+import FoodExplorer from "../assets/imgs/food-explorer.png";
+
 import "../styles/components/mainContent.sass";
-import { Project } from "./Project";
 
 export function MainContent() {
    return (
@@ -62,7 +64,15 @@ export function MainContent() {
                </Section>
 
                <Section title="work">
-                  <Project />
+                  <div className="info">
+                     <Project 
+                        title="Food-explorer"
+                        image={FoodExplorer}
+                        description="lorem lorem lorem"
+                        techs={["HTML", "CSS", "javascript"]}
+                     />
+                     <img src="" alt="" />
+                  </div>
                </Section>
             </main>
 
