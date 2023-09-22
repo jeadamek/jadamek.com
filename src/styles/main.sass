@@ -16,6 +16,16 @@
 
    h1
       color: variables.$title-dark
+   
+   h2
+      color: variables.$subtitle-dark
+
+   strong
+      color: variables.$primary-dark
+
+   header
+         h2
+            color: variables.$blue-100
 
 .light-theme
    background-color: variables.$background-light
@@ -23,6 +33,31 @@
 
    h1
       color: variables.$title-light
+
+   h2
+      color: variables.$subtitle-light
+
+   strong
+      color: variables.$primary-light
+
+   header
+         h2
+            color: variables.$blue-600
+         
+         p
+            color: variables.$dark-400
+   
+   footer
+      color: variables.$light-400
+
+      .author-info div
+         color: variables.$blue-100
+
+      @include mixins.md
+         color: variables.$text-light
+         
+         .author-info div
+               color: variables.$blue-300
 
 #root
    height: 100vh
