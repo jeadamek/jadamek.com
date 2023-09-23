@@ -2,12 +2,17 @@ import PropTypes from "prop-types";
 
 import { TechTag } from "./TechTag";
 
+import "../styles/components/project.sass";
+
 export function Project({title, techs, description, image}){
    return(
       <div className="project">
          <img src={image} alt={`Foto do projeto ${title}`} />
-         <h2>{title}</h2>
-         <p>{description}</p>
+
+         <div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+         </div>
 
          <div>
             {

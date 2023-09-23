@@ -4,9 +4,9 @@ import { SectionTitle } from  "./SectionTitle";
 
 import "../styles/components/section.sass";
 
-export function Section({title, children}) {
+export function Section({title, children, id}) {
    return (
-      <section>
+      <section id={id}>
          <SectionTitle title={title} />
          {children}
       </section>
@@ -15,5 +15,6 @@ export function Section({title, children}) {
 
 Section.propTypes = {
    title: PropTypes.string.isRequired,
-   children: PropTypes.any.isRequired
+   children: PropTypes.any.isRequired,
+   id: PropTypes.string,
 };

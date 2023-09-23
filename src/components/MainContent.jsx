@@ -18,8 +18,8 @@ export function MainContent() {
                   <p className="info">Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores cum illo totam excepturi dolore. Officiis, explicabo!</p>
                </Section>
 
-               <Section title="skills">
-                  <div className="info" id="skills">
+               <Section title="skills" id="skills">
+                  <div className="info skills" >
                      <div>
                         <h3>Languages</h3>
                         <ul>
@@ -63,15 +63,21 @@ export function MainContent() {
                   </div>
                </Section>
 
-               <Section title="work">
-                  <div className="info">
+               <Section title="work" id="work">
+                  <div className="info work">
                      <Project 
-                        title="Food-explorer"
+                        title="Food Explorer"
                         image={FoodExplorer}
-                        description="lorem lorem lorem"
+                        description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
                         techs={["HTML", "CSS", "javascript"]}
                      />
-                     <img src="" alt="" />
+
+                     <Project 
+                        title="Food Explorer"
+                        image={FoodExplorer}
+                        description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
+                        techs={["HTML", "CSS", "javascript"]}
+                     />
                   </div>
                </Section>
             </main>
