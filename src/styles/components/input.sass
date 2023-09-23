@@ -1,2 +1,29 @@
 @use '../variables'
 
+
+.input-wrapper
+   input
+      position: relative
+      width: 100%
+      padding: 10px 0
+      font-size: variables.$font-size-100
+      margin-bottom: 16px
+      border: none
+      border-bottom: 1px solid  
+      outline: none
+      background: transparent
+
+   label
+      position: relative
+      left: 0
+      top: -50px
+      padding: 10px 0
+      font-size: variables.$font-size-100
+      pointer-events: none
+      transition: .5s
+
+   input:valid~label,
+   input:focus~label
+      top: -80px
+      left: 0
+      font-size: variables.$font-size-smaller

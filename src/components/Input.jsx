@@ -5,7 +5,7 @@ import '../styles/components/input.sass'
 export function Input({ label, htmlFor, ...rest }) {
   return (
     <div className="input-wrapper">
-      <input {...rest} />
+      <input autoComplete='off' {...rest} />
       <label htmlFor={htmlFor}>{label}</label>
     </div>
   )

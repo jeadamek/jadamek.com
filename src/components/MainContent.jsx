@@ -90,6 +90,7 @@ export function MainContent() {
                         name="name"
                         label="Name" 
                         htmlFor="name" 
+                        required 
                      />
                      <Input 
                         id="email" 
@@ -97,6 +98,7 @@ export function MainContent() {
                         name="email"
                         label="Email" 
                         htmlFor="email" 
+                        required
                      />
                      <Input 
                         id="subject" 
@@ -104,6 +106,7 @@ export function MainContent() {
                         name="subject"
                         label="Subject" 
                         htmlFor="subject" 
+                        required
                      />
                   </form>
                </Section>
