@@ -6,6 +6,7 @@ import { Section } from "./Section";
 import FoodExplorer from "../assets/imgs/food-explorer.png";
 
 import "../styles/components/mainContent.sass";
+import { Input } from "./Input";
 
 export function MainContent() {
    return (
@@ -79,6 +80,32 @@ export function MainContent() {
                         techs={["react", "css", "nodejs", "express"]}
                      />
                   </div>
+               </Section>
+
+               <Section title="contact" id="contact">
+                  <form className="info">
+                     <Input 
+                        id="name" 
+                        type="text"
+                        name="name"
+                        label="Name" 
+                        htmlFor="name" 
+                     />
+                     <Input 
+                        id="email" 
+                        type="email"
+                        name="email"
+                        label="Email" 
+                        htmlFor="email" 
+                     />
+                     <Input 
+                        id="subject" 
+                        type="text"
+                        name="subject"
+                        label="Subject" 
+                        htmlFor="subject" 
+                     />
+                  </form>
                </Section>
             </main>
 
