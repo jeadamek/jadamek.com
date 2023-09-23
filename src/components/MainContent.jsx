@@ -69,14 +69,14 @@ export function MainContent() {
                         title="Food Explorer"
                         image={FoodExplorer}
                         description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
-                        techs={["HTML", "CSS", "javascript"]}
+                        techs={["react", "styled-components", "nodejs", "express"]}
                      />
 
                      <Project 
-                        title="Food Explorer"
+                        title="RocketMovies"
                         image={FoodExplorer}
-                        description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
-                        techs={["HTML", "CSS", "javascript"]}
+                        description="This web app allows you to store and organize your movie ratings."
+                        techs={["react", "css", "nodejs", "express"]}
                      />
                   </div>
                </Section>

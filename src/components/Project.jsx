@@ -9,12 +9,12 @@ export function Project({title, techs, description, image}){
       <div className="project">
          <img src={image} alt={`Foto do projeto ${title}`} />
 
-         <div>
+         <div className="project-info">
             <h3>{title}</h3>
             <p>{description}</p>
          </div>
 
-         <div>
+         <div className="techs">
             {
                techs.map((tech, index) => (
                   <TechTag key={index} title={tech} />
