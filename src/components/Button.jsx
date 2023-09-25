@@ -4,7 +4,7 @@ import "../styles/components/button.sass";
 
 export function Button({title}) {
    return(
-      <button>
+      <button className="submit-button">
          {title}
       </button>
    )
