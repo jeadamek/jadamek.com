@@ -1,4 +1,5 @@
 import { Input } from './Input';
+import { Button } from './Button';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { Project } from './Project';
@@ -98,6 +99,7 @@ export function MainContent() {
                 htmlFor="name"
                 required
               />
+
               <Input
                 id="email"
                 type="email"
@@ -106,6 +108,7 @@ export function MainContent() {
                 htmlFor="email"
                 required
               />
+
               <Input
                 id="subject"
                 type="text"
@@ -114,6 +117,7 @@ export function MainContent() {
                 htmlFor="subject"
                 required
               />
+
               <Textarea
                 id="message"
                 name="message"
@@ -121,6 +125,10 @@ export function MainContent() {
                 htmlFor="message"
                 required
               />
+
+              <Button
+                  title="send message"
+               />
             </form>
           </Section>
         </main>
