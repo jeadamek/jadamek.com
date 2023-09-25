@@ -1,4 +1,37 @@
 @use '../variables'
 
 .textarea-wrapper 
+   height: 200px
+
+   textarea
+      position: relative
+      width: 100%
+      padding: 10px 0
+      font-size: variables.$font-size-100
+      margin-bottom: 16px
+      border: none
+      border-bottom: 1px solid 
+      outline: none
+      background: transparent
+      resize: none
+      height: 45px
+      transition: .5s
    
+   label
+      position: relative
+      left: 0
+      top: -50px
+      padding: 10px 0
+      font-size: variables.$font-size-100
+      pointer-events: none
+      transition: .5s
+   
+   textarea:valid~label,
+   textarea:focus~label
+      top: -190px
+      left: 0
+      font-size: variables.$font-size-smaller
+   
+   textarea:valid,
+   textarea:focus
+      height: 150px

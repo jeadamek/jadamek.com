@@ -2,6 +2,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Project } from "./Project";
 import { Section } from "./Section";
+import { Textarea } from "./Textarea";
 
 import FoodExplorer from "../assets/imgs/food-explorer.png";
 
@@ -108,6 +109,7 @@ export function MainContent() {
                         htmlFor="subject" 
                         required
                      />
+                     <Textarea />
                   </form>
                </Section>
             </main>

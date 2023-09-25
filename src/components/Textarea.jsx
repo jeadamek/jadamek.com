@@ -1,11 +1,11 @@
 
 import "../styles/components/textarea.sass";
 
-export function TextArea() {
+export function Textarea() {
    return(
       <div className="textarea-wrapper">
-         <textarea name="" id="" cols="30" rows="10"></textarea>
-         <label htmlFor="">Message</label>
+         <textarea name="message" id="message" required ></textarea>
+         <label htmlFor="message">Message</label>
       </div>
    )
 }
