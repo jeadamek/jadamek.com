@@ -1,10 +1,52 @@
 @use "../variables"
 
-
-.submit-button 
+.submit-button
    width: 100%
    padding: 1.2rem 0
+
+   text-align: center
    font-size: variables.$font-size-100
-   
-   border-radius: 10px
+   background-color: variables.$blue-600
+
+   position: relative
+   display: inline-block
+   text-decoration: none
+
    cursor: pointer
+
+   transition: ease-out .5s
+   -webkit-transition: ease-out .5s
+   -moz-transition: ease-out .5s
+
+   &:after,
+   &:before
+      position: absolute
+      content: ""
+      width: 0
+      height: 0
+      transition: .5s
+
+   &:after
+      top: -3px
+      left: -3px
+      border-top: 3px solid transparent
+      border-left: 3px solid transparent
+
+   &:before
+      bottom: -3px
+      right: -3px
+      border-bottom: 3px solid transparent
+      border-right: 3px solid transparent
+
+   &:hover,
+   &:focus
+      background: variables.$blue-transparent
+      color: variables.$blue-700
+
+   &:hover::after,
+   &:hover::before,
+   &:focus::before,
+   &:focus::after
+      width: calc(100% + 3px)
+      height: calc(100% + 3px)
+      border-color: variables.$blue-100

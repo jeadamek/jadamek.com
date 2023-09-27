@@ -38,9 +38,19 @@
       color: variables.$blue-100
 
    .submit-button
-      background: transparent
-      color: variables.$primary-dark
-      border: 1px solid variables.$primary-dark
+      color: variables.$light-100
+      border-top: 1px solid variables.$blue-100
+      border-left: none
+      border-bottom: 1px solid variables.$blue-100
+      // background: variables.$blue-transparent
+
+
+      &:hover,
+      &:active
+         color: variables.$light-100
+         // border: 1px solid variables.$blue-100
+         // border: none
+         
       
 
 .light-theme
@@ -67,9 +77,8 @@
       color: variables.$blue-600
 
    .submit-button
-         background-color: variables.$blue-700
-         border: none
-         color: variables.$light-100
+      border: none
+      color: variables.$light-100
 
    header
          h2
