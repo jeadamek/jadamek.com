@@ -1,0 +1,17 @@
+@use "../mixins"
+
+
+section 
+   display: grid
+   grid-template-columns: auto
+   grid-template-areas: "title" "info"
+   gap: 2.8rem
+
+   @include mixins.md
+      grid-template-columns: 168px 1fr
+      grid-template-areas: "title title" ". info"
+      column-gap: 3.2rem
+      row-gap: 0
+
+   .info
+      grid-area: info

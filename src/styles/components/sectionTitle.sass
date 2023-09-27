@@ -1,0 +1,22 @@
+@use '../variables'
+
+.section-title
+   grid-area: title
+   width: fit-content
+
+   position: relative
+   display: inline-block
+
+   font-size: variables.$font-size-400
+   font-weight: 600
+
+   &::after
+      content: ""
+      height: 1px
+      width: calc( 100% + 10px )
+
+      position: absolute
+      bottom: 4px
+      left: 16px
+
+      background-color: variables.$blue-100

@@ -11,9 +11,51 @@
    padding: 7.2rem 3.2rem 0
    margin: 0 auto
 
+   main
+      display: flex
+      flex-direction: column
+      gap: 16rem
+
+   p
+      font-size: 1.6rem
+      line-height: 160%
+      font-weight: 400
+
+      strong
+         font-weight: 600
+
    @include mixins.md
       max-width: 85rem
+
+      main
+         margin-top: 15rem
+         gap: 20rem
 
    @include mixins.xl
       margin-left: 16rem
       padding-top: 16rem
+
+.skills
+   display: flex
+   gap: 4.8rem
+   flex-wrap: wrap
+
+   div 
+      width: 16.2rem
+
+   h3
+      font-size: variables.$font-size-200
+      font-weight: 400
+      line-height: 140%
+
+      margin-bottom: .8rem
+
+   li
+      list-style: none
+      font-size: 1.6rem
+      font-weight: 400
+      line-height: 150%
+
+.work
+   display: grid
+   gap: 8rem
