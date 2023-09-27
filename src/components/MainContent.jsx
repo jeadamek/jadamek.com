@@ -90,7 +90,7 @@ export function MainContent() {
           </Section>
 
           <Section title="contact" id="contact">
-            <form className="info">
+            <form className="info contact-form">
               <Input
                 id="name"
                 type="text"

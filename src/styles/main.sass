@@ -99,14 +99,12 @@
          .author-info div
                color: variables.$blue-300
 
-#root
+.page-wrapper
    height: 100vh
-   display: grid
-   grid-template-columns: 210px 1fr
 
    @include mixins.md
-      display: flex
-      flex-direction: row
+      display: grid
+      grid-template-columns: 210px 1fr
 
 a
    text-decoration: none
