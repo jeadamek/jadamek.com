@@ -1,6 +1,6 @@
 import { Input } from './Input';
 import { Button } from './Button';
-import { Header } from './Header';
+import { Title } from './Title';
 import { Footer } from './Footer';
 import { Project } from './Project';
 import { Section } from './Section';
@@ -14,7 +14,7 @@ export function MainContent() {
   return (
     <div id="wrapper">
       <div id="content-wrapper">
-        <Header />
+        <Title />
 
         <main>
           <Section title="about me">

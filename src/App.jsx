@@ -1,10 +1,10 @@
 import { MainContent } from "./components/MainContent";
-import { Sidebar } from "./components/SideBar";
+import { Header } from "./components/Header";
 
 export default function App() {
    return(
       <div className="page-wrapper">
-         <Sidebar />
+         <Header />
          <MainContent />
       </div>
    )
