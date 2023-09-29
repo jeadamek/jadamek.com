@@ -101,11 +101,14 @@
 
 .page-wrapper
    height: 100vh
+   display: grid
+   grid-template-areas: "header" "main"
+   grid-template-rows: 116px 1fr
+
 
    @include mixins.lg
-      display: grid
-      grid-template-columns: 210px 1fr
       grid-template-areas: "header main"
+      grid-template-columns: 210px 1fr
 
 a
    text-decoration: none
