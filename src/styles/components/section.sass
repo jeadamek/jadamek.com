@@ -1,13 +1,16 @@
 @use "../mixins"
 
-
-section 
+section
    display: grid
    grid-template-columns: auto
    grid-template-areas: "title" "info"
    gap: 2.8rem
 
-   // @include mixins.lg
+   padding-top: 20rem
+
+   @include mixins.lg
+      padding-top: 10rem
+
    //    grid-template-columns: 168px 1fr
    //    grid-template-areas: "title title" ". info"
    //    column-gap: 3.2rem
@@ -18,6 +21,6 @@ section
 
       @include mixins.md
          margin-left: 3.2rem
-      
+
       @include mixins.lg
          margin-left: 6.4rem
