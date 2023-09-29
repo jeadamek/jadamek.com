@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 
 import { TechTag } from "./TechTag";
 
-import "../styles/components/project.sass";
+import "../styles/components/workCard.sass";
 
-export function Project({title, techs, description, image}){
+export function WorkCard({title, techs, description, image}){
    return(
-      <div className="project">
+      <div className="work-card">
          <img src={image} alt={`Foto do projeto ${title}`} />
 
-         <div className="project-info">
+         <div className="word-info">
             <h3>{title}</h3>
             <p>{description}</p>
          </div>
@@ -25,7 +25,7 @@ export function Project({title, techs, description, image}){
    )
 }
 
-Project.propTypes = {
+WorkCard.propTypes = {
    title: PropTypes.string.isRequired,
    techs: PropTypes.array.isRequired,
    description: PropTypes.string.isRequired,
