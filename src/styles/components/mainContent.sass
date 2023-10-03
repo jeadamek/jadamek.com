@@ -26,7 +26,7 @@
       strong
          font-weight: 600
 
-   .toggle
+   .toggle-wrapper
       display: none
 
    @include mixins.md
@@ -41,8 +41,11 @@
          margin-top: 10rem
          gap: 28rem
 
-      .toggle
+      .toggle-wrapper
          display: block
+         position: absolute
+         top: 46px
+         right: 46px
 
       // @include mixins.xl
       //    margin-top: 10rem
