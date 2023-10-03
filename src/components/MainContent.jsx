@@ -1,19 +1,23 @@
-import { Input } from './Input'
-import { Button } from './Button'
-import { Title } from './Title'
-import { Footer } from './Footer'
-import { WorkCard } from './WorkCard'
-import { Section } from './Section'
-import { Textarea } from './TextArea'
+import { Input } from './Input';
+import { Title } from './Title';
+import { Button } from './Button';
+import { Footer } from './Footer';
+import { Toggle } from './Toggle';
+import { Section } from './Section';
+import { WorkCard } from './WorkCard';
+import { Textarea } from './TextArea';
 
-import FoodExplorer from '../assets/imgs/food-explorer.png'
+import FoodExplorer from '../assets/imgs/food-explorer.png';
 
-import '../styles/components/mainContent.sass'
+import '../styles/components/mainContent.sass';
 
 export function MainContent() {
   return (
     <div className="wrapper">
+      
+
       <div className="content-wrapper">
+         <Toggle />
         <Title />
 
         <main>

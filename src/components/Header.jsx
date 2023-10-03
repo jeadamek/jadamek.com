@@ -1,13 +1,13 @@
-import { BsGithub } from 'react-icons/bs'
-import { BsLinkedin } from 'react-icons/bs'
-import { RiMenu5Fill } from 'react-icons/ri'
-import { AiOutlineClose } from 'react-icons/ai'
+import { BsGithub } from 'react-icons/bs';
+import { BsLinkedin } from 'react-icons/bs';
+import { RiMenu5Fill } from 'react-icons/ri';
+import { AiOutlineClose } from 'react-icons/ai';
 
-import { Toggle } from './toggle'
+import { Toggle } from './Toggle';
 
-import '../styles/components/header.sass'
+import '../styles/components/header.sass';
 
-import Logo from '../assets/logo.svg'
+import Logo from '../assets/logo.svg';
 
 export function Header() {
   function handleModal() {
@@ -35,6 +35,7 @@ export function Header() {
             >
               <AiOutlineClose size={28} />
             </button>
+
             <Toggle />
           </div>
           <nav>

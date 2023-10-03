@@ -29,6 +29,15 @@
    .title
       h2
          color: variables.$blue-100
+   
+   .toggle-wrapper 
+      .toggle
+         background-color: variables.$blue-100
+         color: variables.$blue-700
+      
+      .switch
+         left: 4px
+
 
    input, textarea
       border-color: variables.$blue-100
@@ -66,6 +75,14 @@
    strong
       color: variables.$primary-light
 
+   .toggle-wrapper 
+      .toggle
+         background-color: variables.$blue-700
+         color: variables.$blue-100
+      
+      .switch
+         transform: translateX(150%)
+
    input, textarea
       border-color: variables.$blue-600
       color: variables.$text-light
@@ -73,9 +90,30 @@
    label
       color: variables.$blue-600
 
+   #nav-wrapper.active-mobile-nav
+      background-color: variables.$background-light
+
+      .buttons button
+         color: variables.$title-light
+
+      nav ul li 
+         &:after
+            background-color: variables.$blue-700
+         a
+            color: variables.$blue-700
+
+      .social-media a
+         color: variables.$blue-700
+
+         &:hover
+            filter: none
+            color: variables.$blue-300
+
+
+
    .submit-button
       border: none
-      color: variables.$light-100
+      color: variables.$blue-700
 
    .title
       h2

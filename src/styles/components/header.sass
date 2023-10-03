@@ -7,8 +7,6 @@
    z-index: 9999
    grid-area: header
 
-   filter: drop-shadow(-15px 0px 10px black)
-
    @include mixins.lg
       filter: none
 
@@ -25,9 +23,6 @@
       justify-content: space-between
 
       background-color: variables.$blue-700
-
-      @include mixins.md
-         padding: 0 8rem
 
       @include mixins.lg
          width: 21rem
@@ -76,6 +71,9 @@
 
          transition: transform .3s ease-in-out
          transform: translateX(-100%)
+
+         .toggle-wrapper
+            position: relative
 
          @include mixins.lg
             position: inherit
@@ -180,3 +178,4 @@
          @include mixins.lg
             a
                color: variables.$blue-100
+

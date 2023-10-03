@@ -26,6 +26,9 @@
       strong
          font-weight: 600
 
+   .toggle-wrapper
+      display: none
+
    @include mixins.md
       max-width: 75rem
       padding-inline: 4.2rem
@@ -38,9 +41,16 @@
          margin-top: 10rem
          gap: 28rem
 
+      .toggle-wrapper
+         display: block
+         position: absolute
+         top: 46px
+         right: 46px
+
       // @include mixins.xl
       //    margin-top: 10rem
-      
+   
+
 
 .skills
    display: flex
