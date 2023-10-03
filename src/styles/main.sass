@@ -16,20 +16,20 @@
 
    h1
       color: variables.$title-dark
-   
+
    h2
       color: variables.$subtitle-dark
-   
+
    h3
       color: variables.$primary-dark
 
    strong
       color: variables.$primary-dark
 
-   header
-         h2
-            color: variables.$blue-100
-   
+   .title
+      h2
+         color: variables.$blue-100
+
    input, textarea
       border-color: variables.$blue-100
       color: variables.$text-dark
@@ -44,14 +44,11 @@
       border-bottom: 1px solid variables.$blue-100
       // background: variables.$blue-transparent
 
-
       &:hover,
       &:active
          color: variables.$light-100
          // border: 1px solid variables.$blue-100
          // border: none
-         
-      
 
 .light-theme
    background-color: variables.$background-light
@@ -68,11 +65,11 @@
 
    strong
       color: variables.$primary-light
-   
+
    input, textarea
       border-color: variables.$blue-600
       color: variables.$text-light
-   
+
    label
       color: variables.$blue-600
 
@@ -80,13 +77,13 @@
       border: none
       color: variables.$light-100
 
-   header
-         h2
-            color: variables.$blue-600
-         
-         p
-            color: variables.$dark-400
-   
+   .title
+      h2
+         color: variables.$blue-600
+
+      p
+         color: variables.$dark-400
+
    footer
       color: variables.$light-400
 
@@ -95,18 +92,20 @@
 
       @include mixins.md
          color: variables.$text-light
-         
-         .author-info div
-               color: variables.$blue-300
 
-#root
+         .author-info div
+            color: variables.$blue-300
+
+.page-wrapper
    height: 100vh
    display: grid
-   grid-template-columns: 210px 1fr
+   grid-template-areas: "header" "main"
+   grid-template-rows: 116px 1fr
 
-   @include mixins.md
-      display: flex
-      flex-direction: row
+   @include mixins.lg
+      grid-template-areas: "header main"
+      grid-template-columns: 210px 1fr
+      grid-template-rows: auto
 
 a
    text-decoration: none

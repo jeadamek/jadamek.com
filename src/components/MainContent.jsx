@@ -1,24 +1,24 @@
-import { Input } from './Input';
-import { Button } from './Button';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { Project } from './Project';
-import { Section } from './Section';
-import { Textarea } from './TextArea';
+import { Input } from './Input'
+import { Button } from './Button'
+import { Title } from './Title'
+import { Footer } from './Footer'
+import { WorkCard } from './WorkCard'
+import { Section } from './Section'
+import { Textarea } from './TextArea'
 
-import FoodExplorer from '../assets/imgs/food-explorer.png';
+import FoodExplorer from '../assets/imgs/food-explorer.png'
 
-import '../styles/components/mainContent.sass';
+import '../styles/components/mainContent.sass'
 
 export function MainContent() {
   return (
-    <div id="wrapper">
-      <div id="content-wrapper">
-        <Header />
+    <div className="wrapper">
+      <div className="content-wrapper">
+        <Title />
 
         <main>
-          <Section title="about me">
-            <p className="info">
+          <Section title="about me" id="about-me">
+            <p className="info about-me" >
               Lorem ipsum dolor sit amet <strong>consectetur</strong>{' '}
               adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate
               unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores
@@ -73,14 +73,14 @@ export function MainContent() {
 
           <Section title="work" id="work">
             <div className="info work">
-              <Project
+              <WorkCard
                 title="Food Explorer"
                 image={FoodExplorer}
                 description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
                 techs={['react', 'styled-components', 'nodejs', 'express']}
               />
 
-              <Project
+              <WorkCard
                 title="RocketMovies"
                 image={FoodExplorer}
                 description="This web app allows you to store and organize your movie ratings."
@@ -90,7 +90,7 @@ export function MainContent() {
           </Section>
 
           <Section title="contact" id="contact">
-            <form className="info">
+            <form className="info contact-form">
               <Input
                 id="name"
                 type="text"
@@ -126,9 +126,7 @@ export function MainContent() {
                 required
               />
 
-              <Button
-                  title="send message"
-               />
+              <Button title="send message" />
             </form>
           </Section>
         </main>

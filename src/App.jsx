@@ -1,11 +1,11 @@
 import { MainContent } from "./components/MainContent";
-import { Sidebar } from "./components/SideBar";
+import { Header } from "./components/Header";
 
 export default function App() {
    return(
-      <>
-         <Sidebar />
+      <div className="page-wrapper">
+         <Header />
          <MainContent />
-      </>
+      </div>
    )
 }

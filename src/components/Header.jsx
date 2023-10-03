@@ -1,11 +1,76 @@
-import "../styles/components/header.sass";
+import { BsGithub } from 'react-icons/bs'
+import { BsLinkedin } from 'react-icons/bs'
+import { RiMenu5Fill } from 'react-icons/ri'
+import { AiOutlineClose } from 'react-icons/ai'
 
-export function Header(){
-   return (
+import { Toggle } from './toggle'
+
+import '../styles/components/header.sass'
+
+import Logo from '../assets/logo.svg'
+
+export function Header() {
+  function handleModal() {
+    document.getElementById('nav-wrapper').classList.toggle('active-mobile-nav')
+  }
+
+  return (
+    <div className="sidebar">
       <header>
-         <h2>Hi, my name is</h2>
-         <h1>Jessica Adamek</h1>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio quas laborum? Eos odit officia tempora natus quae, ducimus</p>
+        <button
+          className="menu-btn"
+          onClick={() => {
+            handleModal()
+          }}
+        >
+          <RiMenu5Fill size={28} />
+        </button>
+        <img id="logo" src={Logo} alt="Jessica's Logo" />
+        <div id="nav-wrapper">
+          <div className="buttons">
+            <button
+              onClick={() => {
+                handleModal()
+              }}
+            >
+              <AiOutlineClose size={28} />
+            </button>
+            <Toggle />
+          </div>
+          <nav>
+            <ul>
+              <li className="active-menu">
+                <a href="#about-me">about me</a>
+              </li>
+              <li>
+                <a href="#skills">skills</a>
+              </li>
+              <li>
+                <a href="#work">work</a>
+              </li>
+              <li>
+                <a href="#contact">contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div className="social-media">
+            <a
+              href="https://github.com/jeadamek"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsGithub size={28} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jessica-adamek/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsLinkedin size={28} />
+            </a>
+          </div>
+        </div>
       </header>
-   )
+    </div>
+  )
 }
