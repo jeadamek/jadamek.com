@@ -4,7 +4,7 @@ import { TechTag } from "./TechTag";
 
 import "../styles/components/workCard.sass";
 
-export function WorkCard({title, techs, description, image}){
+export function WorkCard({title, techs, description, image, repoLink, deployLink}){
    return(
       <div className="work-card">
          <img src={image} alt={`Foto do projeto ${title}`} />
@@ -22,8 +22,8 @@ export function WorkCard({title, techs, description, image}){
             }
          </div>
          <div className="work-links">
-            <button>View Deploy</button>
-            <button>View Repository</button>
+            <a href={deployLink} target="_blank" rel="noreferrer">View Deploy</a>
+            <a href={repoLink} target="_blank" rel="noreferrer">View Repository</a>
          </div>
       </div>
    )
@@ -33,5 +33,7 @@ WorkCard.propTypes = {
    title: PropTypes.string.isRequired,
    techs: PropTypes.array.isRequired,
    description: PropTypes.string.isRequired,
-   image: PropTypes.string.isRequired
+   image: PropTypes.string.isRequired,
+   repoLink: PropTypes.string.isRequired,
+   deployLink: PropTypes.string.isRequired
 }

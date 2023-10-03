@@ -50,8 +50,8 @@
          border-bottom: 1px solid transparent
          border-right: 1px solid transparent
 
-      &:hover
-         background-color: rgba(216, 222, 229, 0.10)
+      // &:hover
+      //    background-color: rgba(216, 222, 229, 0.10)
 
       &:hover::after,
       &:hover::before
@@ -68,5 +68,39 @@
       .techs
          grid-area: techs
 
-      .work-links
-         grid-area: links
+   .work-links
+      grid-area: links
+      margin: 1.6rem 0
+
+      display: flex
+      gap: 3.2rem
+
+      @include mixins.xl
+         justify-content: space-around
+         flex-wrap: nowrap
+
+      a
+         height: 5rem
+         width: 100%
+
+         display: flex
+         align-items: center
+         justify-content: center
+
+         border: 1px solid variables.$light-500
+
+         font-size: 1.4rem
+         color: variables.$light-400
+         background-color: variables.$blue-700
+
+         z-index: 9999
+
+         transition: .2s
+
+         &:hover
+            border: 2px solid variables.$blue-100
+            color: variables.$blue-100
+            filter: drop-shadow(0px 0px 3px variables.$blue-100)
+
+            
+               

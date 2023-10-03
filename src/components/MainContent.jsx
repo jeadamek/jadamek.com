@@ -82,6 +82,8 @@ export function MainContent() {
                   image={FoodExplorer}
                   description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
                   techs={['react', 'styled-components', 'nodejs', 'express']}
+                  repoLink="https://github.com/jeadamek/food-explorer-frontend"
+                  deployLink="https://food-explorer-deploy.vercel.app/"
                />
 
                <WorkCard
@@ -89,6 +91,8 @@ export function MainContent() {
                   image={FoodExplorer}
                   description="This web app allows you to store and organize your movie ratings."
                   techs={['react', 'css', 'nodejs', 'express']}
+                  repoLink="https://github.com/jeadamek/rocketMovies_frontend"
+                  deployLink="https://rocket-movies-deploy.netlify.app/"
                />
                </div>
             </Section>
