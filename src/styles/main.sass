@@ -90,9 +90,30 @@
    label
       color: variables.$blue-600
 
+   #nav-wrapper.active-mobile-nav
+      background-color: variables.$background-light
+
+      .buttons button
+         color: variables.$title-light
+
+      nav ul li 
+         &:after
+            background-color: variables.$blue-700
+         a
+            color: variables.$blue-700
+
+      .social-media a
+         color: variables.$blue-700
+
+         &:hover
+            filter: none
+            color: variables.$blue-300
+
+
+
    .submit-button
       border: none
-      color: variables.$light-100
+      color: variables.$blue-700
 
    .title
       h2
