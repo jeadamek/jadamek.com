@@ -1,8 +1,10 @@
-import "../styles/components/toggle.sass";
+import '../styles/components/toggle.sass'
 
 export function Toggle() {
-   return(
-      <div className="toggle">
-      </div>   
-   )
+  function handleThemeToggle() {
+      document.body.classList.toggle('dark-theme')
+      document.body.classList.toggle('light-theme')
+  }
+
+  return <div className="toggle" onClick={handleThemeToggle}></div>
 }
