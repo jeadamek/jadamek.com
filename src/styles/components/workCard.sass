@@ -6,8 +6,8 @@
    flex-direction: column
    gap: 1.6rem
 
+   transition: .7s
    cursor: pointer
-
 
    img
       width: 100%
@@ -24,15 +24,40 @@
    @include mixins.md
       display: grid
       grid-template-columns: 250px auto
-      grid-template-areas: "image projectInfo" "image techs"
+      grid-template-areas: "image projectInfo" "image techs" "image links"
 
-      border-radius: 10px
       padding: 1.6rem
+
+      position: relative
+
+      &:after,
+      &:before
+         position: absolute
+         content: ""
+         width: 0
+         height: 0
+         transition: .5s
+
+      &:after
+         top: -1px
+         left: -1px
+         border-top: 1px solid transparent
+         border-left: 1px solid transparent
+
+      &:before
+         bottom: -1px
+         right: -1px
+         border-bottom: 1px solid transparent
+         border-right: 1px solid transparent
 
       &:hover
          background-color: rgba(216, 222, 229, 0.10)
-         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
 
+      &:hover::after,
+      &:hover::before
+         width: calc(100% + 1px)
+         height: calc(100% + 1px)
+         border-color: variables.$blue-300
 
       img
          grid-area: image
@@ -42,3 +67,6 @@
 
       .techs
          grid-area: techs
+
+      .work-links
+         grid-area: links

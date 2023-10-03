@@ -21,6 +21,10 @@ export function WorkCard({title, techs, description, image}){
                ))
             }
          </div>
+         <div className="work-links">
+            <button>View Deploy</button>
+            <button>View Repository</button>
+         </div>
       </div>
    )
 }
