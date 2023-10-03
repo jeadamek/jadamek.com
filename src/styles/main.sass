@@ -150,3 +150,22 @@ a
 
 a, svg
    transition: .3s
+
+
+/*   SCROLL BAR     */
+   
+/* Works on Firefox */
+*
+   scrollbar-width: thin
+   scrollbar-color: variables.$light-500 variables.$light-300
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar
+   width: .6rem
+
+*::-webkit-scrollbar-track
+   background: transparent
+
+*::-webkit-scrollbar-thumb
+   background-color: variables.$light-500
+   border-radius: 1rem
