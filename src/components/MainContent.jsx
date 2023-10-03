@@ -12,13 +12,13 @@ import '../styles/components/mainContent.sass'
 
 export function MainContent() {
   return (
-    <div id="wrapper">
-      <div id="content-wrapper">
+    <div className="wrapper">
+      <div className="content-wrapper">
         <Title />
 
         <main>
-          <Section title="about me">
-            <p className="info about">
+          <Section title="about me" id="about-me">
+            <p className="info about-me" >
               Lorem ipsum dolor sit amet <strong>consectetur</strong>{' '}
               adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate
               unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores
