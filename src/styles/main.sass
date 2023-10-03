@@ -71,6 +71,7 @@
 
    h3
       color: variables.$primary-light
+      font-weight: 500 
 
    strong
       color: variables.$primary-light
@@ -82,6 +83,10 @@
       
       .switch
          transform: translateX(150%)
+
+   .section-title
+      &:after
+         background-color: variables.$blue-300
 
    input, textarea
       border-color: variables.$blue-600
@@ -108,8 +113,6 @@
          &:hover
             filter: none
             color: variables.$blue-300
-
-
 
    .submit-button
       border: none
