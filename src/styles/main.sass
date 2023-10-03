@@ -88,6 +88,16 @@
       &:after
          background-color: variables.$blue-300
 
+   .work-card
+      &:hover::after,
+      &:hover::before
+         border-color: variables.$blue-700
+
+      a
+         &:hover
+            border: none
+            filter: none
+
    input, textarea
       border-color: variables.$blue-600
       color: variables.$text-light
@@ -131,7 +141,7 @@
       .author-info div
          color: variables.$blue-100
 
-      @include mixins.md
+      @include mixins.lg
          color: variables.$text-light
 
          .author-info div

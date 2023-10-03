@@ -23,7 +23,7 @@
    
    @include mixins.md
       display: grid
-      grid-template-columns: 250px auto
+      grid-template-columns: 200px auto
       grid-template-areas: "image projectInfo" "image techs" "image links"
 
       padding: 1.6rem
@@ -73,9 +73,9 @@
       margin: 1.6rem 0
 
       display: flex
-      gap: 3.2rem
+      gap: 1.2rem
 
-      @include mixins.xl
+      @include mixins.lg
          justify-content: space-around
          flex-wrap: nowrap
 
@@ -93,7 +93,7 @@
          color: variables.$light-400
          background-color: variables.$blue-700
 
-         z-index: 9999
+         z-index: 999
 
          transition: .2s
 
@@ -101,6 +101,3 @@
             border: 2px solid variables.$blue-100
             color: variables.$blue-100
             filter: drop-shadow(0px 0px 3px variables.$blue-100)
-
-            
-               
