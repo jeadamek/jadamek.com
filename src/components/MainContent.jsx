@@ -18,7 +18,7 @@ export function MainContent() {
 
         <main>
           <Section title="about me">
-            <p className="info">
+            <p className="info about">
               Lorem ipsum dolor sit amet <strong>consectetur</strong>{' '}
               adipisicing elit. Quibusdam numquam, mollitia cupiditate voluptate
               unde, iure saepe, soluta porro voluptatum nesciunt ex quas dolores
