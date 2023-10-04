@@ -50,14 +50,12 @@
          border-bottom: 1px solid transparent
          border-right: 1px solid transparent
 
-      // &:hover
-      //    background-color: rgba(216, 222, 229, 0.10)
-
       &:hover::after,
       &:hover::before
          width: calc(100% + 1px)
          height: calc(100% + 1px)
          border-color: variables.$blue-300
+         border: 2px solid variables.$blue-300
 
       img
          grid-area: image
@@ -75,7 +73,7 @@
       display: flex
       gap: 1.2rem
 
-      @include mixins.lg
+      @include mixins.md
          justify-content: space-around
          flex-wrap: nowrap
 

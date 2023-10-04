@@ -86,17 +86,21 @@
 
    .section-title
       &:after
+         height: 2px
          background-color: variables.$blue-300
 
    .work-card
-      &:hover::after,
-      &:hover::before
-         border-color: variables.$blue-700
+      h3
+         color: variables.$title-light
 
       a
          &:hover
             border: none
             filter: none
+         
+      .work-links:has(a:hover) a:not(:hover)
+         opacity: .85
+
 
    input, textarea
       border-color: variables.$blue-600

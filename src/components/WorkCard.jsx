@@ -22,8 +22,8 @@ export function WorkCard({title, techs, description, image, repoLink, deployLink
             }
          </div>
          <div className="work-links">
-            <a href={deployLink} target="_blank" rel="noreferrer">View Deploy</a>
-            <a href={repoLink} target="_blank" rel="noreferrer">View Repository</a>
+            <a href={deployLink} target="_blank" rel="noreferrer">Project</a>
+            <a href={repoLink} target="_blank" rel="noreferrer">Repository</a>
          </div>
       </div>
    )
