@@ -169,14 +169,24 @@ export function MainContent() {
                         repoLink="https://github.com/jeadamek/rocketMovies_frontend"
                         deployLink="https://rocket-movies-deploy.netlify.app/"
                      />
+
+							<WorkCard
+                        title="Space Cream"
+                        image={FoodExplorer}
+                        description="An animated and responsive web page for an ice cream store, created using flexbox and plain CSS."
+                        techs={['html', 'css']}
+                        repoLink="https://github.com/jeadamek/space-cream/"
+                        deployLink="https://jeadamek.github.io/space-cream/"
+                     />
                   </div>
                </Section>
 
                <Section title="contact" id="contact">
 						{
 							formSubmitted ?
-							<div className="thank-you-message">
+							<div className="message">
 								<p>Thank you for your message!</p>
+								<Button title="back"/>
 							</div>
 							:
 							<form className="info contact-form" onSubmit={sendEmail}>
