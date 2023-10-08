@@ -15,7 +15,7 @@ import FoodExplorer from '../assets/imgs/food-explorer.png'
 import '../styles/components/mainContent.sass'
 
 export function MainContent() {
-	const [formSubmitted, setFormSubmitted] = useState(false)
+	const [formSubmitted, setFormSubmitted] = useState(true)
 
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
@@ -186,7 +186,7 @@ export function MainContent() {
 							formSubmitted ?
 							<div className="message">
 								<p>Thank you for your message!</p>
-								<Button title="back"/>
+								<Button title="new message" onClick={() => setFormSubmitted(false)}/>
 							</div>
 							:
 							<form className="info contact-form" onSubmit={sendEmail}>

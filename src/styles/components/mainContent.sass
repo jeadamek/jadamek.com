@@ -83,15 +83,22 @@
 
 .contact-form
    margin-bottom: 5rem
-   
-.about-me, .contact-form 
-   @include mixins.lg
-      max-width: 60rem
 
 .message
+   grid-area: info
    height: 40rem
    text-align: center
-   
+
+   @include mixins.xl
+      width: 60rem
+
    p
       font-size: 2rem
       margin-top: 3.2rem
+   
+   button
+      width: 20rem
+
+.about-me, .contact-form
+   @include mixins.xl
+      max-width: 60rem
