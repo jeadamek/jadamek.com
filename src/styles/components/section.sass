@@ -6,8 +6,6 @@ section
    grid-template-areas: "title" "info"
    gap: 2.8rem
 
-   padding-top: 20rem
-
    @include mixins.xl
       padding-top: 10rem
 
@@ -16,5 +14,13 @@ section
       column-gap: 3.2rem
       row-gap: 0
 
+
    .info
-      grid-area: info   
+      grid-area: info
+      min-height: 82vh
+
+      @include mixins.xl
+         min-height: 70vh
+   
+   .contact, .about-me
+      min-height: fit-content

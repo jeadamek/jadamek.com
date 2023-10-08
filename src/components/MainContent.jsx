@@ -179,7 +179,7 @@ export function MainContent() {
                </Section>
 
                <Section title="contact" id="contact">
-                  <Element name="contact">
+                  <Element name="contact" className='info contact'>
                      {formSubmitted ? (
                         <div className="message">
                            <p>Thank you for your message!</p>
@@ -190,7 +190,7 @@ export function MainContent() {
                         </div>
                      ) : (
                         <form
-                           className="info contact-form"
+                           className="contact-form"
                            onSubmit={sendEmail}
                         >
                            <Input

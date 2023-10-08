@@ -1,5 +1,5 @@
-import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-scroll'
+import { useMediaQuery } from 'react-responsive';
 
 import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
@@ -13,7 +13,7 @@ import '../styles/components/header.sass'
 import Logo from '../assets/logo.svg'
 
 export function Header() {
-   const desktopOffset = -150
+   const desktopOffset = -130
    const mobileOffset = -250
 
    const isDesktop = useMediaQuery({ query: '(min-width: 992px)' });

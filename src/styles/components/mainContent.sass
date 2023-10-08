@@ -3,9 +3,6 @@
 
 .wrapper
    grid-area: main
-
-   display: flex
-   flex-direction: column
    width: 100%
 
 .content-wrapper
@@ -17,6 +14,9 @@
       display: flex
       flex-direction: column
       gap: 16rem
+
+      @include mixins.md
+         gap: 0
 
    p
       font-size: 1.6rem
@@ -40,7 +40,6 @@
 
       main
          margin-top: 10rem
-         gap: 28rem
 
       .toggle-wrapper
          display: block
@@ -48,17 +47,13 @@
          top: 46px
          right: 46px
 
-      // @include mixins.xl
-      //    margin-top: 10rem
-   
-
-
 .skills
    display: flex
    gap: 3.2rem
    flex-wrap: wrap
+   align-content: flex-start
 
-   div 
+   div
       width: 16.2rem
 
    h3
@@ -81,9 +76,6 @@
    @include mixins.lg
       margin-left: -1.6rem
 
-.contact-form
-   margin-bottom: 5rem
-
 .message
    grid-area: info
    height: 40rem
@@ -95,10 +87,14 @@
    p
       font-size: 2rem
       margin-top: 3.2rem
-   
+
    button
       width: 20rem
 
 .about-me, .contact-form
    @include mixins.xl
       max-width: 60rem
+
+.about-me, .work
+   @include mixins.md
+      margin-bottom: 16rem
