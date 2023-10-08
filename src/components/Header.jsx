@@ -44,7 +44,7 @@ export function Header() {
                </div>
                <nav>
                   <ul>
-                     <li className="active-menu">
+                     <li className="active">
                         <Link
                            to="about-me"
                            spy={true}
