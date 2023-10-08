@@ -15,6 +15,8 @@ import FoodExplorer from '../assets/imgs/food-explorer.png'
 import '../styles/components/mainContent.sass'
 
 export function MainContent() {
+	const [formSubmitted, setFormSubmitted] = useState(false)
+
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
    const [subject, setSubject] = useState('')
@@ -23,11 +25,41 @@ export function MainContent() {
    function sendEmail(e) {
       e.preventDefault()
 
-		if (name === '' || email === '' || subject === '' || message === ''){
-			alert("Preencha todos os campos")
-		}
+      if (name === '' || email === '' || subject === '' || message === '') {
+         alert('Preencha todos os campos')
+      }
 
-      emailjs.send()
+      const templateParams = {
+         from_name: name,
+         subject: subject,
+         email: email,
+         message: message
+      }
+
+		const serviceID = import.meta.env.VITE_REACT_APP_SERVICE_ID
+		const templateID = import.meta.env.VITE_REACT_APP_TEMPLATE_ID
+		const publicKey = import.meta.env.VITE_REACT_APP_PUBLIC_KEY
+
+      emailjs
+         .send(
+            serviceID,
+            templateID,
+            templateParams,
+            publicKey
+         )
+         .then(
+            response => {
+               console.log('Email enviado', response.status, response.text)
+               setName('')
+               setEmail('')
+               setSubject('')
+               setMessage('')
+					setFormSubmitted(true)
+            },
+            err => {
+               console.log('ERRO: ', err)
+            }
+         )
    }
 
    return (
@@ -141,52 +173,62 @@ export function MainContent() {
                </Section>
 
                <Section title="contact" id="contact">
-                  <form className="info contact-form" onSubmit={sendEmail}>
-                     <Input
-                        id="name"
-                        type="text"
-                        name="name"
-                        label="Name"
-                        htmlFor="name"
-                        required
-                        onChange={e => setName(e.target.value)}
-                        value={name}
-                     />
+						{
+							formSubmitted ?
+							<div className="thank-you-message">
+								<p>Thank you for your message!</p>
+							</div>
+							:
+							<form className="info contact-form" onSubmit={sendEmail}>
+								<Input
+									id="name"
+									type="text"
+									name="name"
+									label="Name"
+									htmlFor="name"
+									required
+									onChange={e => setName(e.target.value)}
+									value={name}
+								/>
 
-                     <Input
-                        id="email"
-                        type="email"
-                        name="email"
-                        label="Email"
-                        htmlFor="email"
-                        required
-                        onChange={e => setEmail(e.target.value)}
-                        value={email}
-                     />
+								<Input
+									id="email"
+									type="email"
+									name="email"
+									label="Email"
+									htmlFor="email"
+									required
+									onChange={e => setEmail(e.target.value)}
+									value={email}
+								/>
 
-                     <Input
-                        id="subject"
-                        type="text"
-                        name="subject"
-                        label="Subject"
-                        htmlFor="subject"
-                        required
-                        onChange={e => setSubject(e.target.value)}
-                        value={subject}
-                     />
+								<Input
+									id="subject"
+									type="text"
+									name="subject"
+									label="Subject"
+									htmlFor="subject"
+									required
+									onChange={e => setSubject(e.target.value)}
+									value={subject}
+								/>
 
-                     <Textarea
-                        id="message"
-                        name="message"
-                        label="Message"
-                        htmlFor="message"
-                        required
-                        onChange={e => setMessage(e.target.value)}
-                        value={message}
-                     />
+								<Textarea
+									id="message"
+									name="message"
+									label="Message"
+									htmlFor="message"
+									required
+									onChange={e => setMessage(e.target.value)}
+									value={message}
+								/>
 
-                     <Button type="submit" title="send message" />
-                  </form>
+								<Button type="submit" title="send message" />
+							</form>
+						}
+
+
+                  
                </Section>
             </main>
          </div>
