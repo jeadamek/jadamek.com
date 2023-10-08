@@ -62,8 +62,8 @@ export function MainContent() {
    return (
       <div className="wrapper">
          <main>
-            <Element name="about-me" className="content-wrapper" id="about-me">
-               <Toggle />
+            <Toggle />
+            <Element name="about-me" id="about-me">
                <Title />
 
                <Section title="about me">

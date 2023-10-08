@@ -24,9 +24,11 @@ export function Header() {
    const [activeLink, setActiveLink] = useState('')
 
    function handleMobileNavModal() {
-      document
-         .getElementById('nav-wrapper')
-         .classList.toggle('active-mobile-nav')
+      if (!isDesktop) {
+         document
+            .getElementById('nav-wrapper')
+            .classList.toggle('active-mobile-nav')
+      }
    }
 
    function handleScroll() {
@@ -38,7 +40,7 @@ export function Header() {
          const element = document.getElementById(section)
          if (element) {
             // Calculate top position of the section and define where the element area starts
-            const sectionTop = element.offsetTop + offset
+            const sectionTop = element.offsetTop + offset - 100
 
             // Calculate bottom position of the section, adding the section top position and its height
             const sectionBottom = sectionTop + element.offsetHeight
@@ -47,11 +49,9 @@ export function Header() {
                scrollY >= sectionTop &&
                scrollY < sectionBottom &&
                activeLink !== section
-               
             ) {
                setActiveLink(section)
                found = true
-               console.log(section)
             }
          }
       })
@@ -64,7 +64,10 @@ export function Header() {
 
    // Add a Listener to scroll event when the component is built
    useEffect(() => {
+      handleScroll()
+
       window.addEventListener('scroll', handleScroll)
+
       return () => {
          window.removeEventListener('scroll', handleScroll)
       }
@@ -91,7 +94,7 @@ export function Header() {
                         <Link
                            to="about-me"
                            spy={true}
-                           smooth={true}
+                           smooth={true}  
                            offset={offset}
                            duration={500}
                            onClick={() => handleMobileNavModal()}
