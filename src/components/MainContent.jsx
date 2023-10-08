@@ -9,7 +9,7 @@ import { Footer } from './Footer'
 import { Toggle } from './Toggle'
 import { Button } from './Button'
 import { Section } from './Section'
-import { Textarea } from './TextArea'
+import { Textarea } from './Textarea'
 import { WorkCard } from './WorkCard'
 
 import FoodExplorer from '../assets/imgs/food-explorer.png'
