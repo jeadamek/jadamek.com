@@ -16,5 +16,14 @@ section
       grid-area: info
       min-height: 82vh
 
-   .contact, .about-me
+   .about-me
       min-height: fit-content
+
+   .contact
+      min-height: fit-content
+
+      @include mixins.md
+         min-height: 62vh
+
+      @include mixins.lg
+         min-height: fit-content
