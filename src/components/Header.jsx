@@ -1,5 +1,7 @@
+// import { useState } from 'react';
+
 import { Link } from 'react-scroll'
-import { useMediaQuery } from 'react-responsive';
+import { useMediaQuery } from 'react-responsive'
 
 import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
@@ -16,10 +18,10 @@ export function Header() {
    const desktopOffset = -130
    const mobileOffset = -250
 
-   const isDesktop = useMediaQuery({ query: '(min-width: 992px)' });
-   const offset = isDesktop ? desktopOffset : mobileOffset;
+   const isDesktop = useMediaQuery({ query: '(min-width: 992px)' })
+   const offset = isDesktop ? desktopOffset : mobileOffset
 
-   function handleModal() {
+   function handleMobileNavModal() {
       document
          .getElementById('nav-wrapper')
          .classList.toggle('active-mobile-nav')
@@ -28,22 +30,13 @@ export function Header() {
    return (
       <div className="sidebar">
          <header>
-            <button
-               className="menu-btn"
-               onClick={() => {
-                  handleModal()
-               }}
-            >
+            <button className="menu-btn" onClick={() => handleMobileNavModal()}>
                <RiMenu5Fill size={28} />
             </button>
             <img id="logo" src={Logo} alt="Jessica's Logo" />
             <div id="nav-wrapper">
                <div className="buttons">
-                  <button
-                     onClick={() => {
-                        handleModal()
-                     }}
-                  >
+                  <button onClick={() => handleMobileNavModal()}>
                      <AiOutlineClose size={28} />
                   </button>
 
@@ -58,6 +51,7 @@ export function Header() {
                            smooth={true}
                            offset={offset}
                            duration={500}
+                           onClick={() => handleMobileNavModal()}
                         >
                            about me
                         </Link>
@@ -69,6 +63,7 @@ export function Header() {
                            smooth={true}
                            offset={offset}
                            duration={500}
+                           onClick={() => handleMobileNavModal()}
                         >
                            skills
                         </Link>
@@ -80,6 +75,7 @@ export function Header() {
                            smooth={true}
                            offset={offset}
                            duration={500}
+                           onClick={() => handleMobileNavModal()}
                         >
                            work
                         </Link>
@@ -91,6 +87,7 @@ export function Header() {
                            smooth={true}
                            offset={offset}
                            duration={500}
+                           onClick={() => handleMobileNavModal()}
                         >
                            contact
                         </Link>
