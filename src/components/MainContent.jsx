@@ -61,11 +61,11 @@ export function MainContent() {
 
    return (
       <div className="wrapper">
-         <Element name="about-me" className="content-wrapper" id="about-me">
-            <Toggle />
-            <Title />
+         <main>
+            <Element name="about-me" className="content-wrapper" id="about-me">
+               <Toggle />
+               <Title />
 
-            <main>
                <Section title="about me">
                   <div className="info about-me">
                      <p>
@@ -96,153 +96,145 @@ export function MainContent() {
                      </p>
                   </div>
                </Section>
+            </Element>
 
-               <Section title="skills" id="skills">
-                  <Element name="skills" className="info skills">
-                     <div>
-                        <h3>Languages</h3>
-                        <ul>
-                           <li>JavaScript</li>
-                           <li>HTML</li>
-                           <li>CSS</li>
-                           <li>Python</li>
-                           <li>SQL</li>
-                        </ul>
+            <Section title="skills" id="skills">
+               <Element name="skills" className="info skills">
+                  <div>
+                     <h3>Languages</h3>
+                     <ul>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                     </ul>
+                  </div>
+
+                  <div>
+                     <h3>Frameworks & Libraries</h3>
+                     <ul>
+                        <li>ReactJS</li>
+                        <li>NodeJS</li>
+                        <li>Bootstrap</li>
+                        <li>Restful API</li>
+                     </ul>
+                  </div>
+
+                  <div>
+                     <h3>Tools</h3>
+                     <ul>
+                        <li>Git & GitHub</li>
+                        <li>Chrome DevTools</li>
+                        <li>Visual Studio Code</li>
+                     </ul>
+                  </div>
+
+                  <div>
+                     <h3>Design</h3>
+                     <ul>
+                        <li>UX/UI Design</li>
+                        <li>Figma</li>
+                        <li>Photoshop</li>
+                        <li>Prototyping</li>
+                        <li>Wireframing</li>
+                     </ul>
+                  </div>
+               </Element>
+            </Section>
+
+            <Section title="work" id="work">
+               <Element name="work" className="info work">
+                  <WorkCard
+                     title="Food Explorer"
+                     image={FoodExplorer}
+                     description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
+                     techs={['react', 'styled-components', 'nodejs', 'express']}
+                     repoLink="https://github.com/jeadamek/food-explorer-frontend"
+                     deployLink="https://food-explorer-deploy.vercel.app/"
+                  />
+
+                  <WorkCard
+                     title="RocketMovies"
+                     image={RocketMovies}
+                     description="This web app allows you to store and organize your movie ratings."
+                     techs={['react', 'css', 'nodejs', 'express']}
+                     repoLink="https://github.com/jeadamek/rocketMovies_frontend"
+                     deployLink="https://rocket-movies-deploy.netlify.app/"
+                  />
+
+                  <WorkCard
+                     title="Space Cream"
+                     image={SpaceCream}
+                     description="An animated and responsive web page for an ice cream store, created using flexbox and plain CSS."
+                     techs={['html', 'css']}
+                     repoLink="https://github.com/jeadamek/space-cream/"
+                     deployLink="https://jeadamek.github.io/space-cream/"
+                  />
+               </Element>
+            </Section>
+
+            <Section title="contact" id="contact">
+               <Element name="contact" className="info contact">
+                  {formSubmitted ? (
+                     <div className="message">
+                        <p>Thank you for your message!</p>
+                        <Button
+                           title="new message"
+                           onClick={() => setFormSubmitted(false)}
+                        />
                      </div>
+                  ) : (
+                     <form className="contact-form" onSubmit={sendEmail}>
+                        <Input
+                           id="name"
+                           type="text"
+                           name="name"
+                           label="Name"
+                           htmlFor="name"
+                           required
+                           onChange={e => setName(e.target.value)}
+                           value={name}
+                        />
 
-                     <div>
-                        <h3>Frameworks & Libraries</h3>
-                        <ul>
-                           <li>ReactJS</li>
-                           <li>NodeJS</li>
-                           <li>Bootstrap</li>
-                           <li>Restful API</li>
-                        </ul>
-                     </div>
+                        <Input
+                           id="email"
+                           type="email"
+                           name="email"
+                           label="Email"
+                           htmlFor="email"
+                           required
+                           onChange={e => setEmail(e.target.value)}
+                           value={email}
+                        />
 
-                     <div>
-                        <h3>Tools</h3>
-                        <ul>
-                           <li>Git & GitHub</li>
-                           <li>Chrome DevTools</li>
-                           <li>Visual Studio Code</li>
-                        </ul>
-                     </div>
+                        <Input
+                           id="subject"
+                           type="text"
+                           name="subject"
+                           label="Subject"
+                           htmlFor="subject"
+                           required
+                           onChange={e => setSubject(e.target.value)}
+                           value={subject}
+                        />
 
-                     <div>
-                        <h3>Design</h3>
-                        <ul>
-                           <li>UX/UI Design</li>
-                           <li>Figma</li>
-                           <li>Photoshop</li>
-                           <li>Prototyping</li>
-                           <li>Wireframing</li>
-                        </ul>
-                     </div>
-                  </Element>
-               </Section>
+                        <Textarea
+                           id="message"
+                           name="message"
+                           label="Message"
+                           htmlFor="message"
+                           required
+                           onChange={e => setMessage(e.target.value)}
+                           value={message}
+                        />
 
-               <Section title="work" id="work">
-                  <Element name="work" className="info work">
-                     <WorkCard
-                        title="Food Explorer"
-                        image={FoodExplorer}
-                        description="A web app designed for restaurants. Admins can easily manage dishes, orders, and customer information. Customers can create accounts, order food, and update their profiles with ease."
-                        techs={[
-                           'react',
-                           'styled-components',
-                           'nodejs',
-                           'express'
-                        ]}
-                        repoLink="https://github.com/jeadamek/food-explorer-frontend"
-                        deployLink="https://food-explorer-deploy.vercel.app/"
-                     />
-
-                     <WorkCard
-                        title="RocketMovies"
-                        image={RocketMovies}
-                        description="This web app allows you to store and organize your movie ratings."
-                        techs={['react', 'css', 'nodejs', 'express']}
-                        repoLink="https://github.com/jeadamek/rocketMovies_frontend"
-                        deployLink="https://rocket-movies-deploy.netlify.app/"
-                     />
-
-                     <WorkCard
-                        title="Space Cream"
-                        image={SpaceCream}
-                        description="An animated and responsive web page for an ice cream store, created using flexbox and plain CSS."
-                        techs={['html', 'css']}
-                        repoLink="https://github.com/jeadamek/space-cream/"
-                        deployLink="https://jeadamek.github.io/space-cream/"
-                     />
-                  </Element>
-               </Section>
-
-               <Section title="contact" id="contact">
-                  <Element name="contact" className='info contact'>
-                     {formSubmitted ? (
-                        <div className="message">
-                           <p>Thank you for your message!</p>
-                           <Button
-                              title="new message"
-                              onClick={() => setFormSubmitted(false)}
-                           />
-                        </div>
-                     ) : (
-                        <form
-                           className="contact-form"
-                           onSubmit={sendEmail}
-                        >
-                           <Input
-                              id="name"
-                              type="text"
-                              name="name"
-                              label="Name"
-                              htmlFor="name"
-                              required
-                              onChange={e => setName(e.target.value)}
-                              value={name}
-                           />
-
-                           <Input
-                              id="email"
-                              type="email"
-                              name="email"
-                              label="Email"
-                              htmlFor="email"
-                              required
-                              onChange={e => setEmail(e.target.value)}
-                              value={email}
-                           />
-
-                           <Input
-                              id="subject"
-                              type="text"
-                              name="subject"
-                              label="Subject"
-                              htmlFor="subject"
-                              required
-                              onChange={e => setSubject(e.target.value)}
-                              value={subject}
-                           />
-
-                           <Textarea
-                              id="message"
-                              name="message"
-                              label="Message"
-                              htmlFor="message"
-                              required
-                              onChange={e => setMessage(e.target.value)}
-                              value={message}
-                           />
-
-                           <Button type="submit" title="send message" />
-                        </form>
-                     )}
-                  </Element>
-               </Section>
-            </main>
-         </Element>
+                        <Button type="submit" title="send message" />
+                     </form>
+                  )}
+               </Element>
+            </Section>
+         </main>
          <Footer />
       </div>
    )
