@@ -48,16 +48,21 @@
 
    .submit-button
       color: variables.$light-100
-      border-top: 1px solid variables.$blue-100
-      border-left: none
-      border-bottom: 1px solid variables.$blue-100
-      // background: variables.$blue-transparent
+      border: 1px solid variables.$blue-100
+      background-color: variables.$blue-600
 
       &:hover,
       &:active
          color: variables.$light-100
-         // border: 1px solid variables.$blue-100
-         // border: none
+         background: variables.$blue-transparent
+
+      &:hover::after,
+      &:hover::before,
+      &:focus::before,
+      &:focus::after
+         border-color: variables.$blue-100
+         filter: drop-shadow(1px 1px 2px variables.$blue-300)
+
 
 .light-theme
    background-color: variables.$background-light
@@ -130,7 +135,17 @@
 
    .submit-button
       border: none
-      color: variables.$blue-700
+      background-color: variables.$blue-700
+      color: variables.$light-200
+
+      &:hover
+         filter: drop-shadow(1px 1px 2px variables.$blue-300)
+
+      &:hover::after,
+      &:hover::before,
+      &:focus::before,
+      &:focus::after
+         border-color: variables.$blue-700
 
    .title
       h2
