@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive';
 import { Link } from 'react-scroll'
 
 import { BsGithub } from 'react-icons/bs'
@@ -12,6 +13,12 @@ import '../styles/components/header.sass'
 import Logo from '../assets/logo.svg'
 
 export function Header() {
+   const desktopOffset = -150
+   const mobileOffset = -250
+
+   const isDesktop = useMediaQuery({ query: '(min-width: 992px)' });
+   const offset = isDesktop ? desktopOffset : mobileOffset;
+
    function handleModal() {
       document
          .getElementById('nav-wrapper')
@@ -49,7 +56,7 @@ export function Header() {
                            to="about-me"
                            spy={true}
                            smooth={true}
-                           offset={-70}
+                           offset={offset}
                            duration={500}
                         >
                            about me
@@ -60,7 +67,7 @@ export function Header() {
                            to="skills"
                            spy={true}
                            smooth={true}
-                           offset={-70}
+                           offset={offset}
                            duration={500}
                         >
                            skills
@@ -71,7 +78,7 @@ export function Header() {
                            to="work"
                            spy={true}
                            smooth={true}
-                           offset={-70}
+                           offset={offset}
                            duration={500}
                         >
                            work
@@ -82,7 +89,7 @@ export function Header() {
                            to="contact"
                            spy={true}
                            smooth={true}
-                           offset={-70}
+                           offset={offset}
                            duration={500}
                         >
                            contact
