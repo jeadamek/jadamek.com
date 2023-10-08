@@ -1,7 +1,7 @@
 @use '../variables'
 
 .textarea-wrapper 
-   height: 200px
+   height: 170px
 
    textarea
       position: relative
@@ -20,7 +20,7 @@
    label
       position: relative
       left: 0
-      top: -50px
+      top: -55px
       padding: 10px 0
       font-size: variables.$font-size-100
       pointer-events: none
@@ -28,10 +28,10 @@
    
    textarea:valid~label,
    textarea:focus~label
-      top: -190px
+      top: -160px
       left: 0
       font-size: variables.$font-size-smaller
    
    textarea:valid,
    textarea:focus
-      height: 150px
+      height: 120px

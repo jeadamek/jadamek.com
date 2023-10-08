@@ -3,61 +3,59 @@
 
 .wrapper
    grid-area: main
-
-   display: flex
-   flex-direction: column
    width: 100%
 
-.content-wrapper
-   max-width: 60rem
-   padding: 7.2rem 3.2rem 5rem
-   margin: 0 auto
-
    main
+      max-width: 60rem
+      padding: 0 3.2rem 5rem
       display: flex
       flex-direction: column
       gap: 16rem
 
-   p
-      font-size: 1.6rem
-      line-height: 160%
-      font-weight: 400
+      margin: 0 auto
 
-      strong
-         font-weight: 600
+      .title p
+         font-size: 2rem
 
-   .toggle-wrapper
-      display: none
+      p
+         font-size: variables.$font-size-100
+         line-height: 160%
+         font-weight: 400
+         margin-bottom: 1.6rem
 
-   @include mixins.md
-      max-width: 75rem
-      padding-inline: 4.2rem
-
-   @include mixins.lg
-      max-width: 104rem
-      padding-top: 12rem
-
-      main
-         margin-top: 10rem
-         gap: 28rem
+         strong
+            font-weight: 600
 
       .toggle-wrapper
-         display: block
-         position: absolute
-         top: 46px
-         right: 46px
+         display: none
 
-      // @include mixins.xl
-      //    margin-top: 10rem
-   
+      @include mixins.md
+         gap: 0
+         max-width: 75rem
+         padding-inline: 4.2rem
 
+      @include mixins.lg
+         max-width: 104rem
+
+         .toggle-wrapper
+            display: block
+            position: absolute
+            top: 46px
+            right: 46px
+
+#about-me
+   min-height: 90vh
+
+   @include mixins.lg
+      min-height: fit-content
 
 .skills
    display: flex
    gap: 3.2rem
    flex-wrap: wrap
+   align-content: flex-start
 
-   div 
+   div
       width: 16.2rem
 
    h3
@@ -80,9 +78,25 @@
    @include mixins.lg
       margin-left: -1.6rem
 
-.contact-form
-   margin-bottom: 5rem
-   
-.about, .contact-form 
-   @include mixins.lg
+.message
+   grid-area: info
+   height: 40rem
+   text-align: center
+
+   @include mixins.xl
+      width: 60rem
+
+   p
+      font-size: 2rem
+      margin-top: 3.2rem
+
+   button
+      width: 20rem
+
+.about-me, .contact-form
+   @include mixins.xl
       max-width: 60rem
+
+.about-me, .work
+   @include mixins.md
+      margin-bottom: 16rem

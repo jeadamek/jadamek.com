@@ -48,16 +48,21 @@
 
    .submit-button
       color: variables.$light-100
-      border-top: 1px solid variables.$blue-100
-      border-left: none
-      border-bottom: 1px solid variables.$blue-100
-      // background: variables.$blue-transparent
+      border: 1px solid variables.$blue-100
+      background-color: variables.$blue-600
 
       &:hover,
       &:active
          color: variables.$light-100
-         // border: 1px solid variables.$blue-100
-         // border: none
+         background: variables.$blue-transparent
+
+      &:hover::after,
+      &:hover::before,
+      &:focus::before,
+      &:focus::after
+         border-color: variables.$blue-100
+         filter: drop-shadow(1px 1px 2px variables.$blue-300)
+
 
 .light-theme
    background-color: variables.$background-light
@@ -71,6 +76,7 @@
 
    h3
       color: variables.$primary-light
+      font-weight: 500 
 
    strong
       color: variables.$primary-light
@@ -82,6 +88,24 @@
       
       .switch
          transform: translateX(150%)
+
+   .section-title
+      &:after
+         height: 2px
+         background-color: variables.$blue-300
+
+   .work-card
+      h3
+         color: variables.$title-light
+
+      a
+         &:hover
+            border: none
+            filter: none
+         
+      .work-links:has(a:hover) a:not(:hover)
+         opacity: .85
+
 
    input, textarea
       border-color: variables.$blue-600
@@ -109,11 +133,19 @@
             filter: none
             color: variables.$blue-300
 
-
-
    .submit-button
       border: none
-      color: variables.$blue-700
+      background-color: variables.$blue-700
+      color: variables.$light-200
+
+      &:hover
+         filter: drop-shadow(1px 1px 2px variables.$blue-300)
+
+      &:hover::after,
+      &:hover::before,
+      &:focus::before,
+      &:focus::after
+         border-color: variables.$blue-700
 
    .title
       h2
@@ -128,7 +160,7 @@
       .author-info div
          color: variables.$blue-100
 
-      @include mixins.md
+      @include mixins.lg
          color: variables.$text-light
 
          .author-info div
@@ -150,3 +182,22 @@ a
 
 a, svg
    transition: .3s
+
+
+/*   SCROLL BAR     */
+   
+/* Works on Firefox */
+*
+   scrollbar-width: thin
+   scrollbar-color: variables.$light-500 variables.$light-300
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar
+   width: .6rem
+
+*::-webkit-scrollbar-track
+   background: transparent
+
+*::-webkit-scrollbar-thumb
+   background-color: variables.$light-500
+   border-radius: 1rem

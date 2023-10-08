@@ -1,7 +1,6 @@
 @use '../variables'
 @use '../mixins'
 
-
 .sidebar
    position: fixed
    z-index: 9999
@@ -9,7 +8,6 @@
 
    @include mixins.lg
       filter: none
-
 
    header
       height: 116px
@@ -152,7 +150,7 @@
                            width: 100%
                            background-color: variables.$blue-100
 
-                  .active-menu
+                  .active
                      a
                         color: variables.$light-200
 
@@ -178,4 +176,3 @@
          @include mixins.lg
             a
                color: variables.$blue-100
-

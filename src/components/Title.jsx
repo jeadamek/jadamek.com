@@ -1,11 +1,12 @@
-import "../styles/components/title.sass";
+import '../styles/components/title.sass'
 
-export function Title(){
+export function Title() {
    return (
       <div className="title">
          <h2>Hi, my name is</h2>
          <h1>Jessica Adamek</h1>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe odio quas laborum? Eos odit officia tempora natus quae, ducimus</p>
+         <p>I&apos;m a web developer and designer.</p>
+         {/* <p>I build interactive and accessible websites.</p> */}
       </div>
    )
 }

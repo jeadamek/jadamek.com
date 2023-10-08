@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
-import "../styles/components/techTag.sass";
+import '../styles/components/techTag.sass'
 
-export function TechTag({title}) {
+export function TechTag({ title }) {
    return(
       <span className="tech-tag">
          {title}
@@ -11,5 +11,5 @@ export function TechTag({title}) {
 }
 
 TechTag.propTypes = {
-   title: PropTypes.string.isRequired,
-};
+   title: PropTypes.string.isRequired
+}
