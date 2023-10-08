@@ -61,12 +61,12 @@ export function MainContent() {
 
    return (
       <div className="wrapper">
-         <Element name="about-me" className="content-wrapper">
+         <Element name="about-me" className="content-wrapper" id="about-me">
             <Toggle />
             <Title />
 
             <main>
-               <Section title="about me" id="about-me">
+               <Section title="about me">
                   <div className="info about-me">
                      <p>
                         My journey began with a solid foundation in{' '}

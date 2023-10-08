@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState, useEffect } from 'react'
 
 import { Link } from 'react-scroll'
 import { useMediaQuery } from 'react-responsive'
@@ -21,11 +21,54 @@ export function Header() {
    const isDesktop = useMediaQuery({ query: '(min-width: 992px)' })
    const offset = isDesktop ? desktopOffset : mobileOffset
 
+   const [activeLink, setActiveLink] = useState('')
+
    function handleMobileNavModal() {
       document
          .getElementById('nav-wrapper')
          .classList.toggle('active-mobile-nav')
    }
+
+   function handleScroll() {
+      const scrollY = window.scrollY
+      const sections = ['about-me', 'skills', 'work', 'contact']
+      let found = false
+
+      sections.forEach(section => {
+         const element = document.getElementById(section)
+         if (element) {
+            // Calculate top position of the section and define where the element area starts
+            const sectionTop = element.offsetTop + offset
+
+            // Calculate bottom position of the section, adding the section top position and its height
+            const sectionBottom = sectionTop + element.offsetHeight
+
+            if (
+               scrollY >= sectionTop &&
+               scrollY < sectionBottom &&
+               activeLink !== section
+               
+            ) {
+               setActiveLink(section)
+               found = true
+               console.log(section)
+            }
+         }
+      })
+
+      // If none section is visible, remove "active" class from all links
+      if (!found) {
+         setActiveLink('')
+      }
+   }
+
+   // Add a Listener to scroll event when the component is built
+   useEffect(() => {
+      window.addEventListener('scroll', handleScroll)
+      return () => {
+         window.removeEventListener('scroll', handleScroll)
+      }
+   }, [])
 
    return (
       <div className="sidebar">
@@ -44,7 +87,7 @@ export function Header() {
                </div>
                <nav>
                   <ul>
-                     <li className="active">
+                     <li className={activeLink === 'about-me' ? 'active' : ''}>
                         <Link
                            to="about-me"
                            spy={true}
@@ -56,7 +99,7 @@ export function Header() {
                            about me
                         </Link>
                      </li>
-                     <li>
+                     <li className={activeLink === 'skills' ? 'active' : ''}>
                         <Link
                            to="skills"
                            spy={true}
@@ -68,7 +111,7 @@ export function Header() {
                            skills
                         </Link>
                      </li>
-                     <li>
+                     <li className={activeLink === 'work' ? 'active' : ''}>
                         <Link
                            to="work"
                            spy={true}
@@ -80,7 +123,7 @@ export function Header() {
                            work
                         </Link>
                      </li>
-                     <li>
+                     <li className={activeLink === 'contact' ? 'active' : ''}>
                         <Link
                            to="contact"
                            spy={true}
