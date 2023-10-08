@@ -1,17 +1,26 @@
-import { Input } from './Input'
+import { useState } from 'react'
+
 import { Title } from './Title'
-import { Button } from './Button'
+import { Input } from './Input'
 import { Footer } from './Footer'
 import { Toggle } from './Toggle'
+import { Button } from './Button'
 import { Section } from './Section'
-import { WorkCard } from './WorkCard'
 import { Textarea } from './TextArea'
+import { WorkCard } from './WorkCard'
 
 import FoodExplorer from '../assets/imgs/food-explorer.png'
 
 import '../styles/components/mainContent.sass'
 
 export function MainContent() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+
+  function handleSubmit() {}
+
   return (
     <div className="wrapper">
       <div className="content-wrapper">
@@ -113,7 +122,7 @@ export function MainContent() {
           </Section>
 
           <Section title="contact" id="contact">
-            <form className="info contact-form">
+            <form className="info contact-form" onSubmit={handleSubmit}>
               <Input
                 id="name"
                 type="text"
@@ -121,6 +130,8 @@ export function MainContent() {
                 label="Name"
                 htmlFor="name"
                 required
+                onChange={e => setName(e.taget.value)}
+                value={name}
               />
 
               <Input
@@ -130,6 +141,8 @@ export function MainContent() {
                 label="Email"
                 htmlFor="email"
                 required
+                onChange={e => setEmail(e.taget.value)}
+                value={email}
               />
 
               <Input
@@ -139,6 +152,8 @@ export function MainContent() {
                 label="Subject"
                 htmlFor="subject"
                 required
+                onChange={e => setSubject(e.taget.value)}
+                value={subject}
               />
 
               <Textarea
@@ -147,9 +162,11 @@ export function MainContent() {
                 label="Message"
                 htmlFor="message"
                 required
+                onChange={e => setMessage(e.taget.value)}
+                value={message}
               />
 
-              <Button title="send message" />
+              <Button type="submit" title="send message" />
             </form>
           </Section>
         </main>
