@@ -20,18 +20,23 @@ import '../styles/components/mainContent.sass'
 
 export function MainContent() {
    const [formSubmitted, setFormSubmitted] = useState(false)
+   // const [errors, setErrors] = useState({})
 
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
    const [subject, setSubject] = useState('')
    const [message, setMessage] = useState('')
 
+   function validateEmail() {
+      if (email !== '') {
+         document.querySelector('input[name="email"]').classList.add('has-value')    
+      } else {
+         document.querySelector('input[name="email"]').classList.remove('has-value')    
+      }
+   }
+
    function sendEmail(e) {
       e.preventDefault()
-
-      if (name === '' || email === '' || subject === '' || message === '') {
-         alert('Preencha todos os campos')
-      }
 
       const templateParams = {
          from_name: name,
@@ -192,11 +197,10 @@ export function MainContent() {
                            name="name"
                            label="Name"
                            htmlFor="name"
-                           required
+                           required 
                            onChange={e => setName(e.target.value)}
                            value={name}
                         />
-
                         <Input
                            id="email"
                            type="email"
@@ -205,6 +209,7 @@ export function MainContent() {
                            htmlFor="email"
                            required
                            onChange={e => setEmail(e.target.value)}
+                           onBlur={validateEmail}
                            value={email}
                         />
 
@@ -224,7 +229,7 @@ export function MainContent() {
                            name="message"
                            label="Message"
                            htmlFor="message"
-                           required
+                           required 
                            onChange={e => setMessage(e.target.value)}
                            value={message}
                         />
