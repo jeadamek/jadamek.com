@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import "../styles/components/sectionTitle.sass";
+import '../styles/components/sectionTitle.sass'
 
-export function SectionTitle({title}){
+export function SectionTitle({ title }) {
    return(
       <h2 className='section-title'>
          {title}
@@ -11,5 +11,5 @@ export function SectionTitle({title}){
 }
 
 SectionTitle.propTypes = {
-   title: PropTypes.string.isRequired,
-};
+   title: PropTypes.string.isRequired
+}

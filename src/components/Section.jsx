@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import { SectionTitle } from  "./SectionTitle";
+import { SectionTitle } from './SectionTitle'
 
-import "../styles/components/section.sass";
+import '../styles/components/section.sass'
 
-export function Section({title, children, id}) {
+export function Section({ title, children, id }) {
    return (
       <section id={id}>
          <SectionTitle title={title} />
@@ -16,5 +16,5 @@ export function Section({title, children, id}) {
 Section.propTypes = {
    title: PropTypes.string.isRequired,
    children: PropTypes.any.isRequired,
-   id: PropTypes.string,
-};
+   id: PropTypes.string
+}

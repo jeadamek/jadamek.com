@@ -20,7 +20,6 @@ import '../styles/components/mainContent.sass'
 
 export function MainContent() {
    const [formSubmitted, setFormSubmitted] = useState(false)
-   // const [errors, setErrors] = useState({})
 
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
@@ -29,9 +28,13 @@ export function MainContent() {
 
    function validateEmail() {
       if (email !== '') {
-         document.querySelector('input[name="email"]').classList.add('has-value')    
+         document
+            .querySelector('input[name="email"]')
+            .classList.add('has-value')
       } else {
-         document.querySelector('input[name="email"]').classList.remove('has-value')    
+         document
+            .querySelector('input[name="email"]')
+            .classList.remove('has-value')
       }
    }
 
@@ -197,7 +200,7 @@ export function MainContent() {
                            name="name"
                            label="Name"
                            htmlFor="name"
-                           required 
+                           required
                            onChange={e => setName(e.target.value)}
                            value={name}
                         />
@@ -229,7 +232,7 @@ export function MainContent() {
                            name="message"
                            label="Message"
                            htmlFor="message"
-                           required 
+                           required
                            onChange={e => setMessage(e.target.value)}
                            value={message}
                         />

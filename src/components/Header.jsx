@@ -94,7 +94,7 @@ export function Header() {
                         <Link
                            to="about-me"
                            spy={true}
-                           smooth={true}  
+                           smooth={true}
                            offset={offset}
                            duration={500}
                            onClick={() => handleMobileNavModal()}
