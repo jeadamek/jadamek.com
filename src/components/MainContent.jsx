@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Element } from 'react-scroll'
+
 import emailjs from '@emailjs/browser'
 
 import { Title } from './Title'
@@ -59,7 +61,7 @@ export function MainContent() {
 
    return (
       <div className="wrapper">
-         <div className="content-wrapper">
+         <Element name="about-me" className="content-wrapper">
             <Toggle />
             <Title />
 
@@ -96,7 +98,7 @@ export function MainContent() {
                </Section>
 
                <Section title="skills" id="skills">
-                  <div className="info skills">
+                  <Element name="skills" className="info skills">
                      <div>
                         <h3>Languages</h3>
                         <ul>
@@ -137,11 +139,11 @@ export function MainContent() {
                            <li>Wireframing</li>
                         </ul>
                      </div>
-                  </div>
+                  </Element>
                </Section>
 
                <Section title="work" id="work">
-                  <div className="info work">
+                  <Element name="work" className="info work">
                      <WorkCard
                         title="Food Explorer"
                         image={FoodExplorer}
@@ -173,69 +175,74 @@ export function MainContent() {
                         repoLink="https://github.com/jeadamek/space-cream/"
                         deployLink="https://jeadamek.github.io/space-cream/"
                      />
-                  </div>
+                  </Element>
                </Section>
 
                <Section title="contact" id="contact">
-                  {formSubmitted ? (
-                     <div className="message">
-                        <p>Thank you for your message!</p>
-                        <Button
-                           title="new message"
-                           onClick={() => setFormSubmitted(false)}
-                        />
-                     </div>
-                  ) : (
-                     <form className="info contact-form" onSubmit={sendEmail}>
-                        <Input
-                           id="name"
-                           type="text"
-                           name="name"
-                           label="Name"
-                           htmlFor="name"
-                           required
-                           onChange={e => setName(e.target.value)}
-                           value={name}
-                        />
+                  <Element name="contact">
+                     {formSubmitted ? (
+                        <div className="message">
+                           <p>Thank you for your message!</p>
+                           <Button
+                              title="new message"
+                              onClick={() => setFormSubmitted(false)}
+                           />
+                        </div>
+                     ) : (
+                        <form
+                           className="info contact-form"
+                           onSubmit={sendEmail}
+                        >
+                           <Input
+                              id="name"
+                              type="text"
+                              name="name"
+                              label="Name"
+                              htmlFor="name"
+                              required
+                              onChange={e => setName(e.target.value)}
+                              value={name}
+                           />
 
-                        <Input
-                           id="email"
-                           type="email"
-                           name="email"
-                           label="Email"
-                           htmlFor="email"
-                           required
-                           onChange={e => setEmail(e.target.value)}
-                           value={email}
-                        />
+                           <Input
+                              id="email"
+                              type="email"
+                              name="email"
+                              label="Email"
+                              htmlFor="email"
+                              required
+                              onChange={e => setEmail(e.target.value)}
+                              value={email}
+                           />
 
-                        <Input
-                           id="subject"
-                           type="text"
-                           name="subject"
-                           label="Subject"
-                           htmlFor="subject"
-                           required
-                           onChange={e => setSubject(e.target.value)}
-                           value={subject}
-                        />
+                           <Input
+                              id="subject"
+                              type="text"
+                              name="subject"
+                              label="Subject"
+                              htmlFor="subject"
+                              required
+                              onChange={e => setSubject(e.target.value)}
+                              value={subject}
+                           />
 
-                        <Textarea
-                           id="message"
-                           name="message"
-                           label="Message"
-                           htmlFor="message"
-                           required
-                           onChange={e => setMessage(e.target.value)}
-                           value={message}
-                        />
+                           <Textarea
+                              id="message"
+                              name="message"
+                              label="Message"
+                              htmlFor="message"
+                              required
+                              onChange={e => setMessage(e.target.value)}
+                              value={message}
+                           />
 
-                        <Button type="submit" title="send message" />
-                     </form>
-                  )}
+                           <Button type="submit" title="send message" />
+                        </form>
+                     )}
+                  </Element>
                </Section>
             </main>
-         </div>
+         </Element>
          <Footer />
       </div>
    )
