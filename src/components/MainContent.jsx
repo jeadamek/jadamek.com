@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 import { Title } from './Title'
 import { Input } from './Input'
@@ -26,7 +27,7 @@ export function MainContent() {
 			alert("Preencha todos os campos")
 		}
 
-      alert('TEST')
+      emailjs.send()
    }
 
    return (
